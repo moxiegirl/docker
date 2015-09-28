@@ -34,9 +34,10 @@ You can use the `--log-opt NAME=VALUE` flag to specify Amazon CloudWatch Logs lo
 
 ### awslogs-region
 
-You must specify a region for the `awslogs` logging driver. You can specify the
-region with either the `awslogs-region` log option or `AWS_REGION` environment
-variable:
+The `awslogs` logging driver must send your Docker logs to a specified region;
+use the `awslogs-region` log option or the `AWS_REGION` environment variable to
+configure this setting. If your Docker daemon is running on an EC2 instance,
+the driver uses that region by default.
 
     docker run --log-driver=awslogs --log-opt awslogs-region=us-east-1 ...
 
