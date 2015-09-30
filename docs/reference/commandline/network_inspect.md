@@ -16,8 +16,7 @@ parent = "smn_cli"
 
       --help=false       Print usage
 
-Returns information about a network. By default, this command renders all results
-in a JSON object.
+Returns information about a network. By default, this command renders all results in a JSON object.
 
 Example output:
 

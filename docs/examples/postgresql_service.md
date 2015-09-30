@@ -85,7 +85,7 @@ And run the PostgreSQL server container (in the foreground):
     $ docker run --rm -P --name pg_test eg_postgresql
 
 There are 2 ways to connect to the PostgreSQL server. We can use [*Link
-Containers*](../userguide/dockerlinks.md), or we can access it from our host
+Containers*](../userguide/networking/dockerlinks.md), or we can access it from our host
 (or the network).
 
 > **Note**:

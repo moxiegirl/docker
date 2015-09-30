@@ -16,6 +16,7 @@ parent = "smn_cli"
 
       --help=false       Print usage
 
+<<<<<<< HEAD
 Connects a running container to a network. This enables instant communication with other containers belonging to the same network.
 
 ```
