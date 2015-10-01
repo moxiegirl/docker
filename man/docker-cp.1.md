@@ -28,12 +28,12 @@ supplying the initial forward slash is optional; The command sees
 `compassionate_darwin:tmp/foo/myfile.txt` as identical. If a `LOCALPATH` value
 is not absolute, is it considered relative to the current working directory.
 
-Behavior is similar to the common Unix utility `cp -a` in that directories are
-copied recursively with permissions preserved if possible. Ownership is set to
-the user and primary group on the receiving end of the transfer. For example,
-files copied to a container will be created with `UID:GID` of the root user.
-Files copied to the local machine will be created with the `UID:GID` of the
-user which invoked the `docker cp` command.
+Behavior is similar to the common Unix utility `cp -a` (unless `-L` option is
+specified) in that directories are copied recursively with permissions preserved
+if possible. Ownership is set to the user and primary group on the receiving end
+of the transfer. For example, files copied to a container will be created with
+`UID:GID` of the root user. Files copied to the local machine will be created
+with the `UID:GID` of the user which invoked the `docker cp` command.
 
 Assuming a path separator of `/`, a first argument of `SRC_PATH` and second
 argument of `DST_PATH`, the behavior is as follows:
@@ -63,7 +63,8 @@ argument of `DST_PATH`, the behavior is as follows:
 
 The command requires `SRC_PATH` and `DST_PATH` to exist according to the above
 rules. If `SRC_PATH` is local and is a symbolic link, the symbolic link, not
-the target, is copied.
+the target, is copied by default, while with option `-L`, the linked target
+instead of the symbol link itself will be copied.
 
 A colon (`:`) is used as a delimiter between `CONTAINER` and `PATH`, but `:`
 could also be in a valid `LOCALPATH`, like `file:name.txt`. This ambiguity is
@@ -85,6 +86,9 @@ contents of the resource from the source container as a tar archive to
 `STDOUT`.
 
 # OPTIONS
+**-L**, **--follow-link**=*true*|*false*
+  Follow symbol link in source
+
 **--help**
   Print usage statement
 
@@ -121,7 +125,7 @@ name if one exists. For example, this command:
 
 If `/test` does not exist on the local machine, it will be created as a file
 with the contents of `/tmp/foo/myfile.txt` from the container. If `/test`
-exists as a file, it will be overwritten. Lastly, if `/tmp` exists as a
+exists as a file, it will be overwritten. Lastly, if `/test` exists as a
 directory, the file will be copied to `/test/myfile.txt`.
 
 Next, suppose you want to copy a file or folder into a container. For example,
@@ -143,6 +147,17 @@ to a directory `/etc/my-app.d` in a container:
 
 The above command will copy the contents of the local `/config` directory into
 the directory `/etc/my-app.d` in the container.
+
+Third, if you want to copy a symbol link into a container, what you want is to
+copy the linked target instead of the symbo link itself, you can use the `-L`
+option to help you do this. For example:
+
+		$ ln -s /tmp/somefile /tmp/somefile.ln
+		$ docker cp -L /tmp/somefile.ln myappcontainer:/tmp/
+
+the above command will copy content of local `/tmp/somefile` into file
+`/tmp/somefile.ln` in the container, without `-L` option, `/tmp/somefile.ln` will
+preserve its symbol link and linked target won't be copied
 
 # HISTORY
 April 2014, Originally compiled by William Henry (whenry at redhat dot com)

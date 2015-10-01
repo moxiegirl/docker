@@ -16,7 +16,8 @@ weight=1
 
     Copy files/folders between a container and the local filesystem
 
-      --help=false        Print usage
+      -L, --follow-link=false    Always follow symbol link in source
+      --help=false               Print usage
 
 In the first synopsis form, the `docker cp` utility copies the contents of
 `PATH` from the filesystem of `CONTAINER` to the `LOCALPATH` (or stream as
@@ -34,12 +35,12 @@ supplying the initial forward slash is optional; The command sees
 `compassionate_darwin:tmp/foo/myfile.txt` as identical. If a `LOCALPATH` value
 is not absolute, is it considered relative to the current working directory.
 
-Behavior is similar to the common Unix utility `cp -a` in that directories are
-copied recursively with permissions preserved if possible. Ownership is set to
-the user and primary group on the receiving end of the transfer. For example,
-files copied to a container will be created with `UID:GID` of the root user.
-Files copied to the local machine will be created with the `UID:GID` of the
-user which invoked the `docker cp` command.
+Behavior is similar to the common Unix utility `cp -a` (unless `-L` option is
+specified) in that directories are copied recursively with permissions preserved
+if possible. Ownership is set to the user and primary group on the receiving end
+of the transfer. For example, files copied to a container will be created with
+`UID:GID` of the root user. Files copied to the local machine will be created
+with the `UID:GID` of the user which invoked the `docker cp` command.
 
 Assuming a path separator of `/`, a first argument of `SRC_PATH` and second
 argument of `DST_PATH`, the behavior is as follows:
@@ -69,7 +70,8 @@ argument of `DST_PATH`, the behavior is as follows:
 
 The command requires `SRC_PATH` and `DST_PATH` to exist according to the above
 rules. If `SRC_PATH` is local and is a symbolic link, the symbolic link, not
-the target, is copied.
+the target, is copied by default, while with option `-L`, the linked target
+instead of the symbol link itself will be copied.
 
 A colon (`:`) is used as a delimiter between `CONTAINER` and `PATH`, but `:`
 could also be in a valid `LOCALPATH`, like `file:name.txt`. This ambiguity is
