@@ -1331,10 +1331,12 @@ Similarly the operator can set the **hostname** with `-h`.
 ### VOLUME (shared filesystems)
 
     -v=[]: Create a bind mount with: [host-src:]container-dest[:<options>], where
-    options are comma delimited and selected from [rw|ro] and [z|Z].
+    options are comma delimited and selected from [rw|ro], [z|Z] and
+    [[r]shared|[r]slave|[r]private].
            If 'host-src' is missing, then docker creates a new volume.
 		   If neither 'rw' or 'ro' is specified then the volume is mounted
 		   in read-write mode.
+           Mount propagation options can be specified only for bind mounted volumes.
     --volumes-from="": Mount all volumes from the given container(s)
 
 > **Note**:

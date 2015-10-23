@@ -478,7 +478,8 @@ any options, the systems uses the following options:
 
 **-v**, **--volume**=[] Create a bind mount
    (format: `[host-dir:]container-dir[:<suffix options>]`, where suffix options
-are comma delimited and selected from [rw|ro] and [z|Z].)
+are comma delimited and selected from [rw|ro], [z|Z] and
+[[r]shared|[r]slave|[r]private].)
 
    (e.g., using -v /host-dir:/container-dir, bind mounts /host-dir in the
 host to /container-dir in the Docker container)
@@ -486,6 +487,19 @@ host to /container-dir in the Docker container)
    If 'host-dir' is missing, then docker automatically creates the new volume
 on the host. **This auto-creation of the host path has been deprecated in
 Release: v1.9.**
+
+The `container-dir` must always be an absolute path such as `/src/docs`.
+The `host-dir` can either be an absolute path or a `name` value. If you
+supply an absolute path for the `host-dir`, Docker bind-mounts to the path
+you specify. If you supply a `name`, Docker creates a named volume by that `name`.
+
+A `name` value must start with start with an alphanumeric character,
+followed by `a-z0-9`, `_` (underscore), `.` (period) or `-` (hyphen).
+An absolute path starts with a `/` (forward slash).
+
+For example, you can specify either `/foo` or `foo` for a `host-dir` value.
+If you supply the `/foo` value, Docker creates a bind-mount. If you supply
+the `foo` specification, Docker creates a named volume.
 
    The **-v** option can be used one or
 more times to add one or more mounts to a container. These mounts can then be
@@ -508,18 +522,28 @@ content label. Shared volume labels allow all containers to read/write content.
 The `Z` option tells Docker to label the content with a private unshared label.
 Only the current container can use a private volume.
 
-The `container-dir` must always be an absolute path such as `/src/docs`.
-The `host-dir` can either be an absolute path or a `name` value. If you
-supply an absolute path for the `host-dir`, Docker bind-mounts to the path
-you specify. If you supply a `name`, Docker creates a named volume by that `name`.
+To control mount propagation property of volume one can use `:[r]shared`,
+`:[r]slave` or `:[r]private` propagation flag. Propagation property can
+be specified only for bind mounted volumes and not for internal volumes or
+named volumes. For mount propagation to work source mount point (mount point
+where source dir is mounted on) has to have right propagation properties. For
+shared volumes, source mount point has to be shared. And for slave volumes,
+source mount has to be either shared or slave.
 
-A `name` value must start with start with an alphanumeric character,
-followed by `a-z0-9`, `_` (underscore), `.` (period) or `-` (hyphen).
-An absolute path starts with a `/` (forward slash).
+Use `df <source-dir>` to figure out the source mount and then use
+`findmnt -o TARGET,PROPAGATION <source-mount-dir>` to figure out propagation
+properties of source mount. If `findmnt` utility is not available, then one
+can look at mount entry for source mount point in `/proc/self/mountinfo`. Look
+at `optional fields` and see if any propagaion properties are specified.
+`shared:X` means mount is `shared`, `master:X` means mount is `slave` and if
+nothing is there that means mount is `private`.
 
-For example, you can specify either `/foo` or `foo` for a `host-dir` value.
-If you supply the `/foo` value, Docker creates a bind-mount. If you supply
-the `foo` specification, Docker creates a named volume.
+To change propagation properties of a mount point use `mount` command. For
+example, if one wants to bind mount source directory `/foo` one can do
+`mount --bind /foo /foo` and `mount --make-private --make-shared /foo`. This
+will convert /foo into a `shared` mount point. Alternatively one can directly
+change propagation properties of source mount. Say `/` is source mount for
+`/foo`, then use `mount --make-shared /` to convert `/` into a `shared` mount.
 
 **--volume-driver**=""
    Container's volume driver. This driver creates volumes specified either from

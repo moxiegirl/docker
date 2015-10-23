@@ -80,11 +80,13 @@ Creates a new container.
       --ulimit=[]                   Ulimit options
       --uts=""                      UTS namespace to use
       -v, --volume=[]               Bind mount a volume with: [host-src:]container-dest[:<options>], where
-                                    options are comma delimited and selected from [rw|ro] and [z|Z].
+                                    options are comma delimited and selected from [rw|ro] and [z|Z] and
+                                    [[r]shared|[r]slave|[r]private].
                                     The 'host-src' can either be an absolute path or a name value.
                                     If 'host-src' is missing, then docker creates a new volume.
                                     If neither 'rw' or 'ro' is specified then the volume is mounted
                                     in read-write mode.
+                                    Mount propagation options can be specified only for bind mounted volumes.
       --volume-driver=""            Container's volume driver
       --volumes-from=[]             Mount volumes from the specified container(s)
       -w, --workdir=""              Working directory inside the container
