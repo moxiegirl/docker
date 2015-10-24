@@ -232,7 +232,7 @@ The default `docker0` bridge network supports the use of port mapping and  `dock
 
 ## User-defined networks
 
-Users can create their own user-defined networks that better isolate containers.  Docker provides some default **network drivers** for use defining these networks.  You can create a new **bridge network** or **overlay network**. You can also create a **network plugin** or **remote network**  written to your own specifications.
+Users can create their own user-defined networks that better isolate containers.  Docker provides some default **network drivers** for use defining new networks.  You can create a new **bridge network** or **overlay network**. You can also create a **network plugin** written to your own specifications.
 
 The next few sections describe each of these drivers in greater detail.
 
@@ -336,22 +336,19 @@ Once launched, each container has access to all the containers in the network re
 
 If you would like to try this for yourself, see the [Getting started for overlay](get-started-overlay.md).
 
-### Custom network plugin
+### Docker Network Plugins
 
-If you like, you can create your own custom, network driver plugin. A network
-driver plugin makes use of Docker's plugin infrastructure. In this
-infrastructure, a plugin is a process running on the same Docker host as the
-Docker `daemon`.
+You can [extend](../../extend) Docker's networking by using a Network Plugin 
+or writing your own. For more information see the [Docker Network Plugin](../../extend/plugin_network.md)
 
-Network plugins follow the same restrictions and installation rules as other
-plugins. All plugins make use of the plugin API. They have a lifecycle that encompasses installation, starting, stopping and activation.
-
-Once you have creatd a custom network driver, you use it like the built-in
-network drivers. For example,
+Once you have installed a Network Plugin, you use the new driver in the `docker
+network create` command. For example,
 
     $ docker network create -d weave mynet
 
-You can inspect it, add containers too and from it, and so forth. Of course, different plugins may make use of different technologies or frameworks so can add features not present in Docker's default networks.  For more information on writing plugins, see (Extending Docker)[../../extend] and (Writing a network driver plugin)[../../extend/plugins_network.md].
+You can then connect your containers to this network. For example,
+
+    $ docker run -it --net mynet busybox
 
 ## Legacy links
 
