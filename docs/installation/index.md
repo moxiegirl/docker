@@ -1,6 +1,6 @@
 <!--[metadata]>
 +++
-title = "Supported installations for Docker Engine"
+title = "Install Docker Engine"
 description = "Lists the installation methods"
 keywords = ["Docker install "]
 [menu.engine]
