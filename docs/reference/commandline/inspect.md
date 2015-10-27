@@ -3,7 +3,7 @@
 title = "inspect"
 description = "The inspect command description and usage"
 keywords = ["inspect, container, json"]
-[menu.main]
+[menu.engine]
 parent = "smn_cli"
 +++
 <![end-metadata]-->

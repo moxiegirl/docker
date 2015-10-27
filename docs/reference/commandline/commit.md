@@ -3,7 +3,7 @@
 title = "commit"
 description = "The commit command description and usage"
 keywords = ["commit, file, changes"]
-[menu.main]
+[menu.engine]
 parent = "smn_cli"
 +++
 <![end-metadata]-->

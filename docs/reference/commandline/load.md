@@ -3,7 +3,7 @@
 title = "load"
 description = "The load command description and usage"
 keywords = ["stdin, tarred, repository"]
-[menu.main]
+[menu.engine]
 parent = "smn_cli"
 +++
 <![end-metadata]-->

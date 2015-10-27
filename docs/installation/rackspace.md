@@ -3,7 +3,7 @@
 title = "Installation on Rackspace Cloud"
 description = "Installation instructions for Docker on Rackspace Cloud."
 keywords = ["Rackspace Cloud, installation, docker, linux,  ubuntu"]
-[menu.main]
+[menu.engine]
 parent = "smn_cloud"
 +++
 <![end-metadata]-->

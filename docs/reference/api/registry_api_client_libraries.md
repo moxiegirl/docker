@@ -4,7 +4,7 @@ draft = true
 title = "Registry API v1 client libraries"
 description = "Various client libraries available to use with the Docker registry API"
 keywords = ["API, Docker, index, registry, REST, documentation, clients, C#, Erlang, Go, Groovy, Java, JavaScript, Perl, PHP, Python, Ruby, Rust,  Scala"]
-[menu.main]
+[menu.engine]
 parent="smn_registry_ref"
 +++
 <![end-metadata]-->

@@ -3,7 +3,7 @@
 title = "The Docker Hub and the Registry v1"
 description = "Documentation for docker Registry and Registry API"
 keywords = ["docker, registry, api,  hub"]
-[menu.main]
+[menu.engine]
 parent="smn_hub_ref"
 +++
 <![end-metadata]-->

@@ -3,7 +3,7 @@
 title = "export"
 description = "The export command description and usage"
 keywords = ["export, file, system, container"]
-[menu.main]
+[menu.engine]
 parent = "smn_cli"
 +++
 <![end-metadata]-->

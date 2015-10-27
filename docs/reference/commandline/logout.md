@@ -3,7 +3,7 @@
 title = "logout"
 description = "The logout command description and usage"
 keywords = ["logout, docker, registry"]
-[menu.main]
+[menu.engine]
 parent = "smn_cli"
 +++
 <![end-metadata]-->

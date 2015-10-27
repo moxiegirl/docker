@@ -3,7 +3,7 @@
 title = "pull"
 description = "The pull command description and usage"
 keywords = ["pull, image, hub, docker"]
-[menu.main]
+[menu.engine]
 parent = "smn_cli"
 +++
 <![end-metadata]-->

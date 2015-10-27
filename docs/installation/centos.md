@@ -3,7 +3,7 @@
 title = "Installation on CentOS"
 description = "Instructions for installing Docker on CentOS"
 keywords = ["Docker, Docker documentation, requirements, linux, centos, epel, docker.io,  docker-io"]
-[menu.main]
+[menu.engine]
 parent = "smn_linux"
 weight=-4
 +++

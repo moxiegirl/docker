@@ -3,7 +3,7 @@
 title = "wait"
 description = "The wait command description and usage"
 keywords = ["container, stop, wait"]
-[menu.main]
+[menu.engine]
 parent = "smn_cli"
 +++
 <![end-metadata]-->

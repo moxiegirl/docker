@@ -3,7 +3,7 @@
 title = "Use trusted images"
 description = "Use trusted images"
 keywords = ["trust, security, docker,  index"]
-[menu.main]
+[menu.engine]
 identifier="smn_content_trust"
 parent= "mn_docker_hub"
 weight=4

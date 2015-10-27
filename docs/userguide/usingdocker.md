@@ -3,7 +3,7 @@
 title = "Run a simple application"
 description = "Learn how to manage and operate Docker containers."
 keywords = ["docker, the docker guide, documentation, docker.io, monitoring containers, docker top, docker inspect, docker port, ports, docker logs, log,  Logs"]
-[menu.main]
+[menu.engine]
 parent="smn_containers"
 weight=-5
 +++

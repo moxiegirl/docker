@@ -3,7 +3,7 @@
 title = "Extending Docker with plugins"
 description = "How to add additional functionality to Docker with plugins extensions"
 keywords = ["Examples, Usage, plugins, docker, documentation, user guide"]
-[menu.main]
+[menu.engine]
 parent = "mn_extend"
 weight=-1
 +++

@@ -3,7 +3,7 @@
 title = "build"
 description = "The build command description and usage"
 keywords = ["build, docker, image"]
-[menu.main]
+[menu.engine]
 parent = "smn_cli"
 +++
 <![end-metadata]-->

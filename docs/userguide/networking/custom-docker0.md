@@ -3,7 +3,7 @@
 title = "Customize the docker0 bridge"
 description = "Customizing docker0"
 keywords = ["docker, bridge, docker0, network"]
-[menu.main]
+[menu.engine]
 parent = "smn_networking"
 +++
 <![end-metadata]-->

@@ -3,7 +3,7 @@
 title = "Log tags for logging driver"
 description = "Describes how to format tags for."
 keywords = ["docker, logging, driver, syslog, Fluentd, gelf"]
-[menu.main]
+[menu.engine]
 parent = "smn_logging"
 weight = 1
 +++

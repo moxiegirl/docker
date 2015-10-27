@@ -3,7 +3,7 @@
 title = "Installation on Debian"
 description = "Instructions for installing Docker on Debian."
 keywords = ["Docker, Docker documentation, installation,  debian"]
-[menu.main]
+[menu.engine]
 parent = "smn_linux"
 weight=-2
 +++

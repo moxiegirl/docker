@@ -3,7 +3,7 @@
 title = "Installation on CRUX Linux"
 description = "Docker installation on CRUX Linux."
 keywords = ["crux linux, virtualization, Docker, documentation,  installation"]
-[menu.main]
+[menu.engine]
 parent = "smn_linux"
 +++
 <![end-metadata]-->

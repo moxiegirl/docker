@@ -3,7 +3,7 @@
 title = "events"
 description = "The events command description and usage"
 keywords = ["events, container, report"]
-[menu.main]
+[menu.engine]
 parent = "smn_cli"
 +++
 <![end-metadata]-->

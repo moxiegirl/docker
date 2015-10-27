@@ -3,7 +3,7 @@
 title = "save"
 description = "The save command description and usage"
 keywords = ["tarred, repository, backup"]
-[menu.main]
+[menu.engine]
 parent = "smn_cli"
 +++
 <![end-metadata]-->

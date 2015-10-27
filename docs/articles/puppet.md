@@ -3,7 +3,7 @@
 title = "Using Puppet"
 description = "Installing and using Puppet"
 keywords = ["puppet, installation, usage, docker,  documentation"]
-[menu.main]
+[menu.engine]
 parent = "smn_third_party"
 +++
 <![end-metadata]-->

@@ -3,7 +3,7 @@
 title = "Installation on Gentoo"
 description = "Installation instructions for Docker on Gentoo."
 keywords = ["gentoo linux, virtualization, docker, documentation,  installation"]
-[menu.main]
+[menu.engine]
 parent = "smn_linux"
 +++
 <![end-metadata]-->

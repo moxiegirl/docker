@@ -3,7 +3,7 @@
 title = "port"
 description = "The port command description and usage"
 keywords = ["port, mapping, container"]
-[menu.main]
+[menu.engine]
 parent = "smn_cli"
 +++
 <![end-metadata]-->

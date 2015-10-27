@@ -3,7 +3,7 @@
 title = "Best practices for writing Dockerfiles"
 description = "Hints, tips and guidelines for writing clean, reliable Dockerfiles"
 keywords = ["Examples, Usage, base image, docker, documentation, dockerfile, best practices, hub,  official repo"]
-[menu.main]
+[menu.engine]
 parent = "smn_images"
 +++
 <![end-metadata]-->

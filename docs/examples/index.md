@@ -3,7 +3,7 @@
 title = "Applied Docker"
 description = "Provides examples for using Docker"
 keywords = ["dockerize, dockerizing apps, dockerizing applications, container,  containers"]
-[menu.main]
+[menu.engine]
 identifier = "smn_applied"
 parent = "mn_use_docker"
 weight = 8	

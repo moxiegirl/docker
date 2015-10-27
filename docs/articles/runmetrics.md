@@ -3,7 +3,7 @@
 title = "Runtime metrics"
 description = "Measure the behavior of running containers"
 keywords = ["docker, metrics, CPU, memory, disk, IO, run,  runtime, stats"]
-[menu.main]
+[menu.engine]
 parent = "smn_administrate"
 weight = 4
 +++

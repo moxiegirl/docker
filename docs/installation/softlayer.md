@@ -3,7 +3,7 @@
 title = "Installation on IBM SoftLayer "
 description = "Installation instructions for Docker on IBM Softlayer."
 keywords = ["IBM SoftLayer, virtualization, cloud, docker, documentation,  installation"]
-[menu.main]
+[menu.engine]
 parent = "smn_cloud"
 +++
 <![end-metadata]-->

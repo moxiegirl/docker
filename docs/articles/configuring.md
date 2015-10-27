@@ -3,7 +3,7 @@
 title = "Configuring and running Docker"
 description = "Configuring and running the Docker daemon on various distributions"
 keywords = ["docker, daemon, configuration, running,  process managers"]
-[menu.main]
+[menu.engine]
 parent = "smn_administrate"
 weight = 3
 +++

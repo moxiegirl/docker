@@ -3,7 +3,7 @@
 title = "Get started with multi-host networking"
 description = "Use overlay for multi-host networking"
 keywords = ["Examples, Usage, network, docker, documentation, user guide, multihost, cluster"]
-[menu.main]
+[menu.engine]
 parent = "smn_networking"
 weight=-3
 +++

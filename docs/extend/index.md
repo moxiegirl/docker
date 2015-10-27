@@ -3,7 +3,7 @@
 title = "Extend Docker"
 description = "How to extend Docker with plugins"
 keywords = ["extend, plugins, docker, documentation, developer"]
-[menu.main]
+[menu.engine]
 identifier = "mn_extend"
 name = "Extend Docker"
 weight = 6

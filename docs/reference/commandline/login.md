@@ -3,7 +3,7 @@
 title = "login"
 description = "The login command description and usage"
 keywords = ["registry, login, image"]
-[menu.main]
+[menu.engine]
 parent = "smn_cli"
 +++
 <![end-metadata]-->

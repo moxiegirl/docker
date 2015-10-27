@@ -3,7 +3,7 @@
 title = "network connect"
 description = "The network connect command description and usage"
 keywords = ["network, connect"]
-[menu.main]
+[menu.engine]
 parent = "smn_cli"
 +++
 <![end-metadata]-->

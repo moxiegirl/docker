@@ -3,7 +3,7 @@
 title = "Create a base image"
 description = "How to create base images"
 keywords = ["Examples, Usage, base image, docker, documentation,  examples"]
-[menu.main]
+[menu.engine]
 parent = "smn_images"
 +++
 <![end-metadata]-->

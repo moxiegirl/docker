@@ -3,7 +3,7 @@
 title = "Configure container DNS"
 description = "Learn how to configure DNS in Docker"
 keywords = ["docker, bridge, docker0, network"]
-[menu.main]
+[menu.engine]
 parent = "smn_networking"
 +++
 <![end-metadata]-->

@@ -3,7 +3,7 @@
 title = "Installation on Ubuntu "
 description = "Instructions for installing Docker on Ubuntu. "
 keywords = ["Docker, Docker documentation, requirements, apt, installation,  ubuntu"]
-[menu.main]
+[menu.engine]
 parent = "smn_linux"
 weight = -6
 +++

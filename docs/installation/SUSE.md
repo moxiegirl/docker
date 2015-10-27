@@ -3,7 +3,7 @@
 title = "Installation on openSUSE and SUSE Linux Enterprise"
 description = "Installation instructions for Docker on openSUSE and on SUSE Linux Enterprise."
 keywords = ["openSUSE, SUSE Linux Enterprise, SUSE, SLE, docker, documentation,  installation"]
-[menu.main]
+[menu.engine]
 parent = "smn_linux"
 +++
 <![end-metadata]-->

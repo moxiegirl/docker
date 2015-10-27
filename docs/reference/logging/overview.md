@@ -3,7 +3,7 @@
 title = "Configuring Logging Drivers"
 description = "Configure logging driver."
 keywords = ["docker, logging, driver, Fluentd"]
-[menu.main]
+[menu.engine]
 parent = "smn_logging"
 weight=-1
 +++

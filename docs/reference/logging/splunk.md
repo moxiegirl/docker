@@ -3,7 +3,7 @@
 title = "Splunk logging driver"
 description = "Describes how to use the Splunk logging driver."
 keywords = ["splunk, docker, logging, driver"]
-[menu.main]
+[menu.engine]
 parent = "smn_logging"
 weight = 2
 +++

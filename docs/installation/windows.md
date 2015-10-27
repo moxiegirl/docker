@@ -3,7 +3,7 @@
 title = "Installation on Windows"
 description = "Docker installation on Microsoft Windows"
 keywords = ["Docker, Docker documentation, Windows, requirements, virtualbox,  boot2docker"]
-[menu.main]
+[menu.engine]
 parent = "smn_engine"
 +++
 <![end-metadata]-->

@@ -3,7 +3,7 @@
 title = "Set up for development on Windows"
 description = "How to set up a server to test Docker Windows client"
 keywords = ["development, inception, container, image Dockerfile, dependencies, Go, artifacts,  windows"]
-[menu.main]
+[menu.engine]
 parent = "smn_develop"
 weight=3
 +++

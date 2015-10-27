@@ -3,7 +3,7 @@
 title = "Using Supervisor with Docker"
 description = "How to use Supervisor process management with Docker"
 keywords = ["docker, supervisor,  process management"]
-[menu.main]
+[menu.engine]
 parent = "smn_third_party"
 +++
 <![end-metadata]-->

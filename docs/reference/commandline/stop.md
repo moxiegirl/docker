@@ -3,7 +3,7 @@
 title = "stop"
 description = "The stop command description and usage"
 keywords = ["stop, SIGKILL, SIGTERM"]
-[menu.main]
+[menu.engine]
 parent = "smn_cli"
 +++
 <![end-metadata]-->

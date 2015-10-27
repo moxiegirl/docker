@@ -3,7 +3,7 @@
 title = "version"
 description = "The version command description and usage"
 keywords = ["version, architecture, api"]
-[menu.main]
+[menu.engine]
 parent = "smn_cli"
 +++
 <![end-metadata]-->

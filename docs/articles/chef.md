@@ -3,7 +3,7 @@
 title = "Using Chef"
 description = "Installation and using Docker via Chef"
 keywords = ["chef, installation, usage, docker,  documentation"]
-[menu.main]
+[menu.engine]
 parent = "smn_third_party"
 +++
 <![end-metadata]-->

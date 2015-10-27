@@ -3,7 +3,7 @@
 title = "network ls"
 description = "The network ls command description and usage"
 keywords = ["network, list"]
-[menu.main]
+[menu.engine]
 parent = "smn_cli"
 +++
 <![end-metadata]-->

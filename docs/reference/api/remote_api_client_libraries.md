@@ -3,7 +3,7 @@
 title = "Remote API client libraries"
 description = "Various client libraries available to use with the Docker remote API"
 keywords = ["API, Docker, index, registry, REST, documentation, clients, C#, Erlang, Go, Groovy, Java, JavaScript, Perl, PHP, Python, Ruby, Rust,  Scala"]
-[menu.main]
+[menu.engine]
 parent="mn_reference"
 +++
 <![end-metadata]-->

@@ -3,7 +3,7 @@
 title = "Work with network commands"
 description = "How do we connect docker containers within and across hosts ?"
 keywords = ["commands, Usage, network, docker, cluster"]
-[menu.main]
+[menu.engine]
 parent = "smn_networking"
 weight=-4
 +++

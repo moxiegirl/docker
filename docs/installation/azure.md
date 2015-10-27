@@ -3,7 +3,7 @@
 title = "Installation on Microsoft Azure platform"
 description = "Instructions for creating a Docker-ready virtual machine on Microsoft Azure cloud platform."
 keywords = ["Docker, Docker documentation, installation, azure,  microsoft"]
-[menu.main]
+[menu.engine]
 parent = "smn_cloud"
 +++
 <![end-metadata]-->

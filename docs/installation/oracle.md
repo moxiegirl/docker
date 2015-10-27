@@ -3,7 +3,7 @@
 title = "Installation on Oracle Linux"
 description = "Installation instructions for Docker on Oracle Linux."
 keywords = ["Docker, Docker documentation, requirements, linux, rhel, centos, oracle,  ol"]
-[menu.main]
+[menu.engine]
 parent = "smn_linux"
 +++
 <![end-metadata]-->

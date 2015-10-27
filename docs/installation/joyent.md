@@ -3,7 +3,7 @@
 title = "Joyent Triton Elastic Container Service"
 description = "Installation instructions for Docker on the Joyent's Triton Elastic Container Service."
 keywords = ["Docker, Docker documentation, installation, joyent, Triton, Joyent Public Cloud, Joyent Compute Service, Joyent Container Service"]
-[menu.main]
+[menu.engine]
 parent = "smn_cloud"
 +++
 <![end-metadata]-->

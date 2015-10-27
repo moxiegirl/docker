@@ -3,7 +3,7 @@
 title = "Process management with CFEngine"
 description = "Managing containerized processes with CFEngine"
 keywords = ["cfengine, process, management, usage, docker,  documentation"]
-[menu.main]
+[menu.engine]
 parent = "smn_third_party"
 +++
 <![end-metadata]-->

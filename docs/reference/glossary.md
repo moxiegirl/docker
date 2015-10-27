@@ -3,7 +3,7 @@
 title = "Docker Glossary"
 description = "Glossary of terms used around Docker"
 keywords = ["glossary, docker, terms,  definitions"]
-[menu.main]
+[menu.engine]
 parent = "mn_about"
 weight = "50"
 +++

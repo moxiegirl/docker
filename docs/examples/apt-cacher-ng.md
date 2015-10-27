@@ -3,7 +3,7 @@
 title = "Dockerizing an apt-cacher-ng service"
 description = "Installing and running an apt-cacher-ng service"
 keywords = ["docker, example, package installation, networking, debian,  ubuntu"]
-[menu.main]
+[menu.engine]
 parent = "smn_applied"
 +++
 <![end-metadata]-->

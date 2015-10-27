@@ -3,7 +3,7 @@
 title = "Where to chat or get help"
 description = "Describes Docker's communication channels"
 keywords = ["IRC, Google group, Twitter, blog,  Stackoverflow"]
-[menu.main]
+[menu.engine]
 parent = "mn_opensource"
 +++
 <![end-metadata]-->

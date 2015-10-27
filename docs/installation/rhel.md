@@ -3,7 +3,7 @@
 title = "Installation on Red Hat Enterprise Linux"
 description = "Instructions for installing Docker on Red Hat Enterprise Linux."
 keywords = ["Docker, Docker documentation, requirements, linux,  rhel"]
-[menu.main]
+[menu.engine]
 parent = "smn_linux"
 weight = -5
 +++

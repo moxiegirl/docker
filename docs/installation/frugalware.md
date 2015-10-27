@@ -3,7 +3,7 @@
 title = "Installation on FrugalWare"
 description = "Installation instructions for Docker on FrugalWare."
 keywords = ["frugalware linux, virtualization, docker, documentation,  installation"]
-[menu.main]
+[menu.engine]
 parent = "smn_linux"
 +++
 <![end-metadata]-->

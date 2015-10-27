@@ -3,7 +3,7 @@
 title = "Control and configure Docker with systemd"
 description = "Controlling and configuring Docker using systemd"
 keywords = ["docker, daemon, systemd,  configuration"]
-[menu.main]
+[menu.engine]
 parent = "smn_administrate"
 weight = 7
 +++

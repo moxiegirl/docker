@@ -3,7 +3,7 @@
 title = "Dockerizing a Redis service"
 description = "Installing and running an redis service"
 keywords = ["docker, example, package installation, networking,  redis"]
-[menu.main]
+[menu.engine]
 parent = "smn_applied"
 +++
 <![end-metadata]-->

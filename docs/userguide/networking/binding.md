@@ -3,7 +3,7 @@
 title = "Bind container ports to the host"
 description = "expose, port, docker, bind publish"
 keywords = ["Examples, Usage, network, docker, documentation, user guide, multihost, cluster"]
-[menu.main]
+[menu.engine]
 parent = "smn_networking"
 +++
 <![end-metadata]-->

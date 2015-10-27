@@ -3,7 +3,7 @@
 title = "Installation on Google Cloud Platform"
 description = "Installation instructions for Docker on the Google Cloud Platform."
 keywords = ["Docker, Docker documentation, installation, google, Google Compute Engine,  Google Cloud Platform"]
-[menu.main]
+[menu.engine]
 parent = "smn_cloud"
 +++
 <![end-metadata]-->

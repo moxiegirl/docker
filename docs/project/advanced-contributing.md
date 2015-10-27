@@ -3,7 +3,7 @@
 title = "Advanced contributing"
 description = "Explains workflows for refactor and design proposals"
 keywords = ["contribute, project, design, refactor,  proposal"]
-[menu.main]
+[menu.engine]
 parent = "smn_contribute"
 weight=6
 +++

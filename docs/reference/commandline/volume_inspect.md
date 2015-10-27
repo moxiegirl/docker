@@ -3,7 +3,7 @@
 title = "volume inspect"
 description = "The volume inspect command description and usage"
 keywords = ["volume, inspect"]
-[menu.main]
+[menu.engine]
 parent = "smn_cli"
 +++
 <![end-metadata]-->

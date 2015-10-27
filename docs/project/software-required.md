@@ -3,7 +3,7 @@
 title = "Get the required software"
 description = "Describes the software required to contribute to Docker"
 keywords = ["GitHub account, repository, Docker, Git, Go, make,  "]
-[menu.main]
+[menu.engine]
 parent = "smn_develop"
 weight=2
 +++

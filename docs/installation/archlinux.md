@@ -3,7 +3,7 @@
 title = "Installation on Arch Linux"
 description = "Installation instructions for Docker on ArchLinux."
 keywords = ["arch linux, virtualization, docker, documentation,  installation"]
-[menu.main]
+[menu.engine]
 parent = "smn_linux"
 +++
 <![end-metadata]-->

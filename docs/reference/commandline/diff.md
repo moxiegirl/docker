@@ -3,7 +3,7 @@
 title = "diff"
 description = "The diff command description and usage"
 keywords = ["list, changed, files, container"]
-[menu.main]
+[menu.engine]
 parent = "smn_cli"
 +++
 <![end-metadata]-->

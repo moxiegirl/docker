@@ -3,7 +3,7 @@
 title = "Understand container communication"
 description = "Understand container communication"
 keywords = ["docker, container, communication, network"]
-[menu.main]
+[menu.engine]
 parent = "smn_networking"
 +++
 <![end-metadata]-->

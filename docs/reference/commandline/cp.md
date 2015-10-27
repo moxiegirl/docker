@@ -3,7 +3,7 @@
 title = "cp"
 description = "The cp command description and usage"
 keywords = ["copy, container, files, folders"]
-[menu.main]
+[menu.engine]
 parent = "smn_cli"
 +++
 <![end-metadata]-->

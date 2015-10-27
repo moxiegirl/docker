@@ -3,7 +3,7 @@
 title = "PowerShell DSC Usage"
 description = "Using DSC to configure a new Docker host"
 keywords = ["powershell, dsc, installation, usage, docker,  documentation"]
-[menu.main]
+[menu.engine]
 parent = "smn_win_osx"
 +++
 <![end-metadata]-->

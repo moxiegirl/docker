@@ -3,7 +3,7 @@
 title = "info"
 description = "The info command description and usage"
 keywords = ["display, docker, information"]
-[menu.main]
+[menu.engine]
 parent = "smn_cli"
 +++
 <![end-metadata]-->

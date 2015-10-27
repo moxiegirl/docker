@@ -3,7 +3,7 @@
 title = "volume rm"
 description = "the volume rm command description and usage"
 keywords = ["volume, rm"]
-[menu.main]
+[menu.engine]
 parent = "smn_cli"
 +++
 <![end-metadata]-->

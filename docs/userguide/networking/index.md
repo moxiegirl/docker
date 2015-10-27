@@ -3,7 +3,7 @@
 title = "Network configuration"
 description = "Docker networking"
 keywords = ["network, networking, bridge, docker,  documentation"]
-[menu.main]
+[menu.engine]
 identifier="smn_networking"
 parent= "mn_use_docker"
 weight=7

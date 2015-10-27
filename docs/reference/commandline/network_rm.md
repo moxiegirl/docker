@@ -3,7 +3,7 @@
 title = "network rm"
 description = "the network rm command description and usage"
 keywords = ["network, rm"]
-[menu.main]
+[menu.engine]
 parent = "smn_cli"
 +++
 <![end-metadata]-->

@@ -3,7 +3,7 @@
 title = "Build your own bridge"
 description = "Learn how to build your own bridge interface"
 keywords = ["docker, bridge, docker0, network"]
-[menu.main]
+[menu.engine]
 parent = "smn_networking"
 +++
 <![end-metadata]-->

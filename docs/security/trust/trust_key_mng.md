@@ -3,7 +3,7 @@
 title = "Manage keys for content trust"
 description = "Manage keys for content trust"
 keywords = ["trust, security, root,  keys, repository"]
-[menu.main]
+[menu.engine]
 parent= "smn_content_trust"
 +++
 <![end-metadata]-->

@@ -3,7 +3,7 @@
 title = "Understand how to contribute"
 description = "Explains basic workflow for Docker contributions"
 keywords = ["contribute, maintainers, review, workflow,  process"]
-[menu.main]
+[menu.engine]
 parent = "smn_contribute"
 +++
 <![end-metadata]-->

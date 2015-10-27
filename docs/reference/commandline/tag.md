@@ -3,7 +3,7 @@
 title = "tag"
 description = "The tag command description and usage"
 keywords = ["tag, name, image"]
-[menu.main]
+[menu.engine]
 parent = "smn_cli"
 +++
 <![end-metadata]-->

@@ -3,7 +3,7 @@
 title = "exec"
 description = "The exec command description and usage"
 keywords = ["command, container, run, execute"]
-[menu.main]
+[menu.engine]
 parent = "smn_cli"
 +++
 <![end-metadata]-->

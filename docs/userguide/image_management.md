@@ -4,7 +4,7 @@ alias = [ "/reference/api/hub_registry_spec/"]
 title = "Image management"
 description = "Documentation for docker Registry and Registry API"
 keywords = ["docker, registry, api,  hub"]
-[menu.main]
+[menu.engine]
 parent="mn_docker_hub"
 weight=-1
 +++

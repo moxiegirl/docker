@@ -3,7 +3,7 @@
 title = "Using the command line"
 description = "Docker's CLI command description and usage"
 keywords = ["Docker, Docker documentation, CLI,  command line"]
-[menu.main]
+[menu.engine]
 identifier= "smn_cli"
 parent = "mn_reference"
 +++

@@ -3,7 +3,7 @@
 title = "push"
 description = "The push command description and usage"
 keywords = ["share, push, image"]
-[menu.main]
+[menu.engine]
 parent = "smn_cli"
 +++
 <![end-metadata]-->

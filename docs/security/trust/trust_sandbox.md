@@ -3,7 +3,7 @@
 title = "Play in a content trust sandbox"
 description = "Play in a trust sandbox"
 keywords = ["trust, security, root,  keys, repository, sandbox"]
-[menu.main]
+[menu.engine]
 parent= "smn_content_trust"
 +++
 <![end-metadata]-->

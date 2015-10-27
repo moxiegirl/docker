@@ -3,7 +3,7 @@
 title = "run"
 description = "The run command description and usage"
 keywords = ["run, command, container"]
-[menu.main]
+[menu.engine]
 parent = "smn_cli"
 +++
 <![end-metadata]-->

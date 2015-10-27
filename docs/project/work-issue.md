@@ -3,7 +3,7 @@
 title = "Work on your issue"
 description = "Basic workflow for Docker contributions"
 keywords = ["contribute, pull request, review, workflow, beginner, squash,  commit"]
-[menu.main]
+[menu.engine]
 parent = "smn_contribute"
 weight=3
 +++

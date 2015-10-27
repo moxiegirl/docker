@@ -3,7 +3,7 @@
 title = "logs"
 description = "The logs command description and usage"
 keywords = ["logs, retrieve, docker"]
-[menu.main]
+[menu.engine]
 parent = "smn_cli"
 +++
 <![end-metadata]-->

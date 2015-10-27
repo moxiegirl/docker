@@ -3,7 +3,7 @@
 title = "Work with a development container"
 description = "How to use Docker's development environment"
 keywords = ["development, inception, container, image Dockerfile, dependencies, Go,  artifacts"]
-[menu.main]
+[menu.engine]
 parent = "smn_develop"
 weight=5
 +++

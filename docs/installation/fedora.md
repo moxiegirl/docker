@@ -3,7 +3,7 @@
 title = "Installation on Fedora"
 description = "Instructions for installing Docker on Fedora."
 keywords = ["Docker, Docker documentation, Fedora, requirements,  linux"]
-[menu.main]
+[menu.engine]
 parent = "smn_linux"
 weight=-3
 +++

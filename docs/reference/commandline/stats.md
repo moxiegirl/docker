@@ -3,7 +3,7 @@
 title = "stats"
 description = "The stats command description and usage"
 keywords = ["container, resource, statistics"]
-[menu.main]
+[menu.engine]
 parent = "smn_cli"
 +++
 <![end-metadata]-->
