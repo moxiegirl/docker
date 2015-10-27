@@ -1,5 +1,18 @@
+<!--[metadata]>
++++
+draft=true
+title = "Configure container DNS"
+description = "Learn how to configure DNS in Docker"
+keywords = ["docker, bridge, docker0, network"]
+[menu.main]
+parent = "smn_networking"
++++
+<![end-metadata]-->
+
 # How Docker networks a container
-<a name="container-networking"></a>
+<!--[metadata]>
+Dave Tucker instructed remove this.  We may want to add it back in later under another form. Labeled DRAFT for now. Won't be built.
+<![end-metadata]-->
 
 While Docker is under active development and continues to tweak and improve its network configuration logic, the shell commands in this section are rough equivalents to the steps that Docker takes when configuring networking for each new container.
 

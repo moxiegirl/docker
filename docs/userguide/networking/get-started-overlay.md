@@ -5,6 +5,7 @@ description = "Use overlay for multi-host networking"
 keywords = ["Examples, Usage, network, docker, documentation, user guide, multihost, cluster"]
 [menu.main]
 parent = "smn_networking"
+weight=-3
 +++
 <![end-metadata]-->     
 

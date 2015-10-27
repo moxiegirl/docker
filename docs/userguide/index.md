@@ -5,7 +5,6 @@ description = "The Docker user guide home page"
 keywords = ["docker, introduction, documentation, about, technology, docker.io, user, guide, user's, manual, platform, framework, virtualization, home,  intro"]
 [menu.main]
 parent = "mn_fun_docker"
-weight = -1
 +++
 <![end-metadata]-->
 

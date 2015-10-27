@@ -5,6 +5,7 @@ description = "How do we connect docker containers within and across hosts ?"
 keywords = ["Examples, Usage, network, docker, documentation, user guide, multihost, cluster"]
 [menu.main]
 parent = "smn_networking"
+weight = -5
 +++
 <![end-metadata]-->
 

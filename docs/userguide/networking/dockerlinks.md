@@ -1,14 +1,15 @@
 <!--[metadata]>
 +++
-title = "Linking containers together"
+title = "Legacy container links"
 description = "Learn how to connect Docker containers together."
 keywords = ["Examples, Usage, user guide, links, linking, docker, documentation, examples, names, name, container naming, port, map, network port,  network"]
 [menu.main]
 parent = "smn_networking"
+weight=-2
 +++
 <![end-metadata]-->
 
-# Linking containers together
+# Legacy container links
 
 In [the Using Docker section](usingdocker.md), you saw how you can
 connect to a service running inside a Docker container via a network

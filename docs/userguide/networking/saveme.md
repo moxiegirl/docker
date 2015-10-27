@@ -1,3 +1,18 @@
+<!--[metadata]>
++++
+draft=true
+title = "Saved text"
+keywords = ["docker, bridge, docker0, network"]
+[menu.main]
+parent = "smn_networking"
++++
+<![end-metadata]-->
+
+<!--[metadata]>
+This content was extracted from the original introduction. We may want to add it back in later under another form. Labeled DRAFT for now. Won't be built.
+<![end-metadata]-->
+
+
 ## A Brief introduction to networking and docker
 When Docker starts, it creates a virtual interface named `docker0` on the host machine.  It randomly chooses an address and subnet from the private range defined by [RFC 1918](http://tools.ietf.org/html/rfc1918) that are not in use on the host machine, and assigns it to `docker0`. Docker made the choice `172.17.42.1/16` when I started it a few minutes ago, for example -- a 16-bit netmask providing 65,534 addresses for the host machine and its containers. The MAC address is generated using the IP address allocated to the container to avoid ARP collisions, using a range from `02:42:ac:11:00:00` to `02:42:ac:11:ff:ff`.
 

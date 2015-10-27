@@ -1,3 +1,17 @@
+<!--[metadata]>
++++
+draft=true
+title = "Tools and Examples"
+keywords = ["docker, bridge, docker0, network"]
+[menu.main]
+parent = "smn_networking"
++++
+<![end-metadata]-->
+
+<!--[metadata]>
+Dave Tucker instructed remove this.  We may want to add it back in later under another form. Labeled DRAFT for now. Won't be built.
+<![end-metadata]-->
+
 # Tools and examples
 Before diving into the following sections on custom network topologies, you might be interested in glancing at a few external tools or examples of the same kinds of configuration.  Here are two:
 - Jérôme Petazzoni has created a `pipework` shell script to help you

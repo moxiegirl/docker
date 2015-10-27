@@ -1,7 +1,16 @@
-# Building your own bridge
-<a name="bridge-building"></a>
+<!--[metadata]>
++++
+title = "Build your own bridge"
+description = "Learn how to build your own bridge interface"
+keywords = ["docker, bridge, docker0, network"]
+[menu.main]
+parent = "smn_networking"
++++
+<![end-metadata]-->
 
-If you want to take Docker out of the business of creating its own Ethernet bridge entirely, you can set up your own bridge before starting Docker and use `-b BRIDGE` or `--bridge=BRIDGE` to tell Docker to use your bridge instead.  If you already have Docker up and running with its old `docker0` still configured, you will probably want to begin by stopping the service and removing the interface:
+# Build your own bridge
+
+You can set up your own bridge before starting Docker and use `-b BRIDGE` or `--bridge=BRIDGE` to tell Docker to use your bridge instead.  If you already have Docker up and running with its default `docker0` still configured, you will probably want to begin by stopping the service and removing the interface:
 
 ```
 # Stopping Docker and removing docker0
@@ -12,7 +21,10 @@ $ sudo brctl delbr docker0
 $ sudo iptables -t nat -F POSTROUTING
 ```
 
-Then, before starting the Docker service, create your own bridge and give it whatever configuration you want.  Here we will create a simple enough bridge that we really could just have used the options in the previous section to customize `docker0`, but it will be enough to illustrate the technique.
+Then, before starting the Docker service, create your own bridge and give it
+whatever configuration you want.  Here we will create a simple enough bridge
+that we really could just have used the options in the previous section to
+customize `docker0`, but it will be enough to illustrate the technique.
 
 ```
 # Create our own bridge
@@ -43,6 +55,13 @@ target     prot opt source               destination
 MASQUERADE  all  --  192.168.5.0/24      0.0.0.0/0
 ```
 
-The result should be that the Docker server starts successfully and is now prepared to bind containers to the new bridge.  After pausing to verify the bridge's configuration, try creating a container -- you will see that its IP address is in your new IP address range, which Docker will have auto-detected.
+The result should be that the Docker server starts successfully and is now
+prepared to bind containers to the new bridge.  After pausing to verify the
+bridge's configuration, try creating a container -- you will see that its IP
+address is in your new IP address range, which Docker will have auto-detected.
 
-Just as we learned in the previous section, you can use the `brctl show` command to see Docker add and remove interfaces from the bridge as you start and stop containers, and can run `ip addr` and `ip route` inside a container to see that it has been given an address in the bridge's IP address range and has been told to use the Docker host's IP address on the bridge as its default gateway to the rest of the Internet.
+You can use the `brctl show` command to see Docker add and remove interfaces
+from the bridge as you start and stop containers, and can run `ip addr` and `ip
+route` inside a container to see that it has been given an address in the
+bridge's IP address range and has been told to use the Docker host's IP address
+on the bridge as its default gateway to the rest of the Internet.

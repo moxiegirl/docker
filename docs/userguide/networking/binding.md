@@ -1,5 +1,14 @@
-# Binding container ports to the host
-<a name="binding-ports"></a>
+<!--[metadata]>
++++
+title = "Bind container ports to the host"
+description = "expose, port, docker, bind publish"
+keywords = ["Examples, Usage, network, docker, documentation, user guide, multihost, cluster"]
+[menu.main]
+parent = "smn_networking"
++++
+<![end-metadata]-->
+
+# Bind container ports to the host
 
 By default Docker containers can make connections to the outside world, but the outside world cannot connect to containers.  Each outgoing connection will appear to originate from one of the host machine's own IP addresses thanks to an `iptables` masquerading rule on the host machine that the Docker server creates when it starts:
 
@@ -16,7 +25,7 @@ MASQUERADE  all  --  172.17.0.0/16       0.0.0.0/0
 ...
 ```
 
-But if you want containers to accept incoming connections, you will need to provide special options when invoking `docker run`.  These options are covered in more detail in the [Docker User Guide](dockerlinks.md) page.  There are two approaches.
+But if you want containers to accept incoming connections, you will need to provide special options when invoking `docker run`. There are two approaches.
 
 First, you can supply `-P` or `--publish-all=true|false` to `docker run` which is a blanket operation that identifies every port with an `EXPOSE` line in the image's `Dockerfile` or `--expose <port>` commandline flag and maps it to a host port somewhere within an _ephemeral port range_. The `docker port` command then needs to be used to inspect created mapping. The _ephemeral port range_ is configured by `/proc/sys/net/ipv4/ip_local_port_range` kernel parameter, typically ranging from 32768 to 61000.
 
@@ -50,4 +59,8 @@ Or if you always want Docker port forwards to bind to one specific IP address, y
 
 The `--userland-proxy` parameter, true by default, provides a userland implementation for inter-container and outside-to-container communication. When disabled, Docker uses both an additional `MASQUERADE` iptable rule and the `net.ipv4.route_localnet` kernel parameter which allow the host machine to connect to a local container exposed port through the commonly used loopback address: this alternative is preferred for performance reasons.
 
-Again, this topic is covered without all of these low-level networking details in the [Docker User Guide](dockerlinks.md/) document if you would like to use that as your port redirection reference instead.
+## Related information
+
+- [Understand Docker container networks](dockernetworks.md)
+- [Work with network commands](work-with-networks.md)
+- [Legacy container links](dockerlinks.md)

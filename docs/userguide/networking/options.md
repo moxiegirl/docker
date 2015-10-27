@@ -1,3 +1,17 @@
+<!--[metadata]>
++++
+draft=true
+title = "Tools and Examples"
+keywords = ["docker, bridge, docker0, network"]
+[menu.main]
+parent = "smn_networking"
++++
+<![end-metadata]-->
+
+<!--[metadata]>
+We may want to add it back in later under another form. Labeled DRAFT for now. Won't be built.
+<![end-metadata]-->
+
 # Quick guide to the options
 Here is a quick list of the networking-related Docker command-line options, in case it helps you find the section below that you are looking for.
 

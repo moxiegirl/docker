@@ -1,5 +1,14 @@
-# Configuring DNS
-<a name="dns"></a>
+<!--[metadata]>
++++
+title = "Configure container DNS"
+description = "Learn how to configure DNS in Docker"
+keywords = ["docker, bridge, docker0, network"]
+[menu.main]
+parent = "smn_networking"
++++
+<![end-metadata]-->
+
+# Configure container DNS
 
 How can Docker supply each container with a hostname and DNS configuration, without having to build a custom image with the hostname written inside?  Its trick is to overlay three crucial `/etc` files inside the container with virtual files where it can write fresh information.  You can see this by running `mount` inside a container:
 
@@ -15,69 +24,92 @@ $$ mount
 This arrangement allows Docker to do clever things like keep `resolv.conf` up to date across all containers when the host machine receives new configuration over DHCP later.  The exact details of how Docker maintains these files inside the container can change from one Docker version to the next, so you should leave the files themselves alone and use the following Docker options instead.
 
 Four different options affect container domain name services.
-- `-h HOSTNAME` or `--hostname=HOSTNAME` -- sets the hostname by which
 
-  the container knows itself.  This is written into `/etc/hostname`,
+<table>
+  <tr>
+    <td>
+    <p>
+    <code>-h HOSTNAME</code> or <code>--hostname=HOSTNAME</code>
+    </p>
+    </td>
+    <td>
+    <p>
+      Sets the hostname by which the container knows itself.  This is written
+      into <code>/etc/hostname</code>, into <code>/etc/hosts</code> as the name
+      of the container's host-facing IP address, and is the name that
+      <code>/bin/bash</code> inside the container will display inside its
+      prompt.  But the hostname is not easy to see from outside the container.
+      It will not appear in <code>docker ps</code> nor in the
+      <code>/etc/hosts</code> file of any other container.
+    </p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+    <p>
+    <code>--link=CONTAINER_NAME</code> or <code>ID:ALIAS</code>
+    </p>
+    </td>
+    <td>
+    <p>
+      Using this option as you <code>run</code> a container gives the new
+      container's <code>/etc/hosts</code> an extra entry named
+      <code>ALIAS</code> that points to the IP address of the container
+      identified by <code>CONTAINER_NAME_or_ID<c/ode>. This lets processes
+      inside the new container connect to the hostname <code>ALIAS</code>
+      without having to know its IP.  The <code>--link=</code> option is
+      discussed in more detail below. Because Docker may assign a different IP
+      address to the linked containers on restart, Docker updates the
+      <code>ALIAS</code> entry in the <code>/etc/hosts</code> file of the
+      recipient containers.   
+</p>
+    </td>
+  </tr>
+  <tr>
+    <td><p>
+    <code>--dns=IP_ADDRESS...</code>
+    </p></td>
+    <td><p>
+     Sets the IP addresses added as <code>server</code> lines to the container's
+     <code>/etc/resolv.conf</code> file.  Processes in the container, when
+     confronted with a hostname not in <code>/etc/hosts</code>, will connect to
+     these IP addresses on port 53 looking for name resolution services.     </p></td>
+  </tr>
+  <tr>
+    <td><p>
+    <code>--dns-search=DOMAIN...</code>
+    </p></td>
+    <td><p>
+    Sets the domain names that are searched when a bare unqualified hostname is
+    used inside of the container, by writing <code>search</code> lines into the
+    container's <code>/etc/resolv.conf</code>. When a container process attempts
+    to access <code>host</code> and the search domain <code>example.com</code>
+    is set, for instance, the DNS logic will not only look up <code>host</code>
+    but also <code>host.example.com</code>.
+    </p>
+    <p>
+    Use <code>--dns-search=.</code> if you don't wish to set the search domain.
+    </p>
+    </td>
+  </tr>
+  <tr>
+    <td><p>
+    <code>--dns-opt=OPTION...</code>
+    </p></td>
+    <td><p>
+      Sets the options used by DNS resolvers by writing an <code>options<code>
+      line into the container's <code>/etc/resolv.conf<code>.
+    </p>
+    <p>
+    See documentation for <code>resolv.conf<code> for a list of valid options
+    </p></td>
+  </tr>
+  <tr>
+    <td><p></p></td>
+    <td><p></p></td>
+  </tr>
+</table>
 
-  into `/etc/hosts` as the name of the container's host-facing IP
-
-  address, and is the name that `/bin/bash` inside the container will
-
-  display inside its prompt.  But the hostname is not easy to see from
-
-  outside the container.  It will not appear in `docker ps` nor in the
-
-  `/etc/hosts` file of any other container.
-
-- `--link=CONTAINER_NAME_or_ID:ALIAS` -- using this option as you `run` a
-
-  container gives the new container's `/etc/hosts` an extra entry
-
-  named `ALIAS` that points to the IP address of the container identified by
-
-  `CONTAINER_NAME_or_ID`.  This lets processes inside the new container
-
-  connect to the hostname `ALIAS` without having to know its IP.  The
-
-  `--link=` option is discussed in more detail below, in the section
-
-  [Communication between containers](#between-containers). Because
-
-  Docker may assign a different IP address to the linked containers
-
-  on restart, Docker updates the `ALIAS` entry in the `/etc/hosts` file
-
-  of the recipient containers.
-
-- `--dns=IP_ADDRESS...` -- sets the IP addresses added as `server`
-
-  lines to the container's `/etc/resolv.conf` file.  Processes in the
-
-  container, when confronted with a hostname not in `/etc/hosts`, will
-
-  connect to these IP addresses on port 53 looking for name resolution
-
-  services.
-
-- `--dns-search=DOMAIN...` -- sets the domain names that are searched
-
-  when a bare unqualified hostname is used inside of the container, by
-
-  writing `search` lines into the container's `/etc/resolv.conf`.
-
-  When a container process attempts to access `host` and the search
-
-  domain `example.com` is set, for instance, the DNS logic will not
-
-  only look up `host` but also `host.example.com`.
-
-  Use `--dns-search=.` if you don't wish to set the search domain.
-
-- `--dns-opt=OPTION...` -- sets the options used by DNS resolvers
-
-  by writing an `options` line into the container's `/etc/resolv.conf`.
-
-  See documentation for `resolv.conf` for a list of valid options.
 
 Regarding DNS settings, in the absence of the `--dns=IP_ADDRESS...`, `--dns-search=DOMAIN...`, or `--dns-opt=OPTION...` options, Docker makes each container's `/etc/resolv.conf` look like the `/etc/resolv.conf` of the host machine (where the `docker` daemon runs).  When creating the container's `/etc/resolv.conf`, the daemon filters out all localhost IP address `nameserver` entries from the host's original file.
 
