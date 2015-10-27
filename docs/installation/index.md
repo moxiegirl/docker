@@ -3,12 +3,14 @@
 title = "Supported installations for Docker Engine"
 description = "Lists the installation methods"
 keywords = ["Docker install "]
+[menu.engine]
+identifier = "smn_engine"
 +++
 <![end-metadata]-->
 
-# Install Docker Engine 
+# Install Docker Engine
 
-Docker Engine is supported on Linux, Cloud, Windows, and OS X. Installation instructions are available for the following: 
+Docker Engine is supported on Linux, Cloud, Windows, and OS X. Installation instructions are available for the following:
 
 ## On Linux
 * [Arch Linux](archlinux.md)
@@ -37,7 +39,7 @@ If your linux distribution is not listed above, don't give up yet. To try out Do
 * [Mac OS X](mac.md)
 * [Windows](windows.md)
 
-## The Docker Archives 
+## The Docker Archives
 Instructions for installing prior releases of Docker can be found in the following docker archives:
 [Docker v1.7](http://docs.docker.com/v1.7/), [Docker v1.6](http://docs.docker.com/v1.6/), [Docker v1.5](http://docs.docker.com/v1.5/), and [Docker v1.4](http://docs.docker.com/v1.4/).
 
@@ -45,4 +47,3 @@ Instructions for installing prior releases of Docker can be found in the followi
 * [About Docker](../misc)
 * [Support](https://www.docker.com/support/)
 * [Training](https://training.docker.com//)
-
