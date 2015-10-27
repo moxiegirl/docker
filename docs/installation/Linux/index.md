@@ -1,6 +1,6 @@
 <!--[metadata]>
 +++
-title = "Supported Linux installations"
+title = "Linux "
 description = "Installation instructions for Docker on Gentoo."
 keywords = ["gentoo linux, virtualization, docker, documentation,  installation"]
 [menu.engine]

@@ -1,10 +1,11 @@
 <!--[metadata]>
 +++
-title = "The Docker user guide"
+title = "Docker Fundamentals"
 description = "The Docker user guide home page"
 keywords = ["docker, introduction, documentation, about, technology, docker.io, user, guide, user's, manual, platform, framework, virtualization, home,  intro"]
 [menu.engine]
-parent = "mn_fun_docker"
+identifier = "mn_fun_docker"
+weight = 2
 +++
 <![end-metadata]-->
 
