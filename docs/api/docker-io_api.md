@@ -1,6 +1,6 @@
 <!--[metadata]>
 +++
-title = "API Reference"
+title = "Docker Hub API"
 description = "API Documentation for the Docker Hub API"
 keywords = ["API, Docker, index, REST, documentation, Docker Hub,  registry"]
 [menu.engine]
