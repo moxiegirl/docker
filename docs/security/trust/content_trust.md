@@ -4,7 +4,7 @@ title = "Content trust in Docker"
 description = "Enabling content trust in Docker"
 keywords = ["content, trust, security, docker,  documentation"]
 [menu.engine]
-parent= "smn_content_trust"
+parent= "mn_docker_security"
 weight=-1
 +++
 <![end-metadata]-->

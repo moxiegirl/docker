@@ -4,7 +4,7 @@ title = "Manage keys for content trust"
 description = "Manage keys for content trust"
 keywords = ["trust, security, root,  keys, repository"]
 [menu.engine]
-parent= "smn_content_trust"
+parent= "mn_docker_security"
 +++
 <![end-metadata]-->
 

@@ -4,7 +4,7 @@ title = "Dockerizing an SSH service"
 description = "Installing and running an SSHd service on Docker"
 keywords = ["docker, example, package installation,  networking"]
 [menu.engine]
-parent = "smn_apps_servs"
+parent = "smn_third_party"
 +++
 <![end-metadata]-->
 

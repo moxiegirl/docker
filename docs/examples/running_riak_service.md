@@ -4,7 +4,7 @@ title = "Dockerizing a Riak service"
 description = "Build a Docker image with Riak pre-installed"
 keywords = ["docker, example, package installation, networking,  riak"]
 [menu.engine]
-parent = "smn_apps_servs"
+parent = "smn_third_party"
 +++
 <![end-metadata]-->
 

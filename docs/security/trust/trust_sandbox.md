@@ -4,7 +4,7 @@ title = "Play in a content trust sandbox"
 description = "Play in a trust sandbox"
 keywords = ["trust, security, root,  keys, repository, sandbox"]
 [menu.engine]
-parent= "smn_content_trust"
+parent= "mn_docker_security"
 +++
 <![end-metadata]-->
 

@@ -4,7 +4,7 @@ title = "Automation with content trust"
 description = "Automating content push pulls with trust"
 keywords = ["trust, security, docker,  documentation, automation"]
 [menu.engine]
-parent= "smn_content_trust"
+parent= "mn_docker_security"
 +++
 <![end-metadata]-->
 
