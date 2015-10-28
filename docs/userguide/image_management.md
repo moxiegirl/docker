@@ -5,7 +5,7 @@ title = "Image management"
 description = "Documentation for docker Registry and Registry API"
 keywords = ["docker, registry, api,  hub"]
 [menu.engine]
-parent="mn_docker_hub"
+parent="mn_use_engine"
 weight=-1
 +++
 <![end-metadata]-->

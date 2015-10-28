@@ -5,7 +5,7 @@ title = "Docker Engine"
 description = "Release notes for Docker 1.x."
 keywords = ["docker, documentation, about, technology, understanding,  release"]
 [menu.engine]
-parent = "smn_release_notes"
+parent = "mn_about_engine"
 +++
 <![end-metadata]-->
 
@@ -121,7 +121,7 @@ Previously, they were treated as relative to the directory where you were
 running `docker-compose`. In the majority of cases, the location of the
 configuration file and where you ran `docker-compose` were the same directory.
 Now, you can use the `-f|--file` argument to specify a configuration file in
-another directory. 
+another directory.
 
 
 ## Docker Swarm 0.2
@@ -154,7 +154,7 @@ repository](https://github.com/docker/machine/blob/master/CHANGES.md#020-2015-03
 handled centrally by Machine instead of letting each driver individually do it.
 - **Regenerate TLS certificates**: A new command has been added to regenerate a
 host’s TLS certificates for good security practice and for if a host’s IP
-address changes. 
+address changes.
 
 ## Docker Hub Enterprise & Commercially Supported Docker Engine
 
