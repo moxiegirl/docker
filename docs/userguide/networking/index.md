@@ -5,7 +5,7 @@ description = "Docker networking"
 keywords = ["network, networking, bridge, docker,  documentation"]
 [menu.engine]
 identifier="smn_networking"
-parent= "mn_use_docker"
+parent= "mn_use_engine"
 weight=7
 +++
 <![end-metadata]-->
