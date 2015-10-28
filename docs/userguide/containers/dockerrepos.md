@@ -2,9 +2,8 @@
 +++
 title = "Store images on Docker Hub"
 description = "Learn how to use the Docker Hub to manage Docker images and work flow"
-keywords = ["repo, Docker Hub, Docker Hub, registry, index, repositories, usage, pull image, push image, image,  documentation"]
 [menu.engine]
-smn_containers_eng
+parent = "smn_containers_eng"
 +++
 <![end-metadata]-->
 
