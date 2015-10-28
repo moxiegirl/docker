@@ -4,7 +4,7 @@ title = "Docker security"
 description = "Review of the Docker Daemon attack surface"
 keywords = ["Docker, Docker documentation,  security"]
 [menu.engine]
-parent = "smn_administrate"
+parent = "smn_administrate_eng"
 weight = 2
 +++
 <![end-metadata]-->
@@ -129,7 +129,7 @@ privilege separation.
 
 Eventually, it is expected that the Docker daemon will run restricted
 privileges, delegating operations well-audited sub-processes,
-each with its own (very limited) scope of Linux capabilities, 
+each with its own (very limited) scope of Linux capabilities,
 virtual network setup, filesystem management, etc. That is, most likely,
 pieces of the Docker engine itself will run inside of containers.
 

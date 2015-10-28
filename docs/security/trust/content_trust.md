@@ -132,7 +132,7 @@ The following image depicts the various signing keys and their relationships:
 You should backup the root key somewhere safe. Given that it is only required
 to create new repositories, it is a good idea to store it offline. Make sure you
 read [Manage keys for content trust](trust_key_mng.md) information
-for details on securing, and backing up your keys. 
+for details on securing, and backing up your keys.
 
 ## Survey of typical content trust operations
 

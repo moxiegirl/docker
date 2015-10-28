@@ -4,7 +4,7 @@ title = "Logging"
 description = "Logging and Logging Drivers"
 keywords = [" docker, logging, driver"]
 [menu.engine]
-parent = "smn_administrate"
+parent = "smn_administrate_eng"
 identifier = "smn_logging"
 weight=8
 +++

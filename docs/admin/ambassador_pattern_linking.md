@@ -4,7 +4,7 @@ title = "Link via an ambassador container"
 description = "Using the Ambassador pattern to abstract (network) services"
 keywords = ["Examples, Usage, links, docker, documentation, examples, names, name,  container naming"]
 [menu.engine]
-parent = "smn_administrate"
+parent = "smn_administrate_eng"
 weight = 6
 +++
 <![end-metadata]-->
