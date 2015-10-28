@@ -4,7 +4,7 @@ title = "Remote API v1.17"
 description = "API Documentation for Docker"
 keywords = ["API, Docker, rcli, REST,  documentation"]
 [menu.engine]
-parent = "smn_remoteapi"
+parent = "smn_engine_api"
 weight = 4
 +++
 <![end-metadata]-->
