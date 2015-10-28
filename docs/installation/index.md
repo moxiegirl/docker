@@ -4,7 +4,7 @@ title = "Install Docker Engine"
 description = "Lists the installation methods"
 keywords = ["Docker install "]
 [menu.engine]
-identifier = "smn_engine_api"
+identifier = "smn_engine_install"
 +++
 <![end-metadata]-->
 

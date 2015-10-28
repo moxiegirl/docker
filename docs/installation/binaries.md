@@ -4,7 +4,7 @@ title = "Installation from binaries"
 description = "Instructions for installing Docker as a binary. Mostly meant for hackers who want to try out Docker on a variety of environments."
 keywords = ["binaries, installation, docker, documentation,  linux"]
 [menu.engine]
-parent = "smn_engine_api"
+parent = "smn_engine_install"
 weight = 110
 +++
 <![end-metadata]-->

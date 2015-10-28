@@ -4,7 +4,7 @@ title = "Installation on Mac OS X"
 description = "Instructions for installing Docker on OS X using boot2docker."
 keywords = ["Docker, Docker documentation, requirements, boot2docker, VirtualBox, SSH, Linux, OSX, OS X,  Mac"]
 [menu.engine]
-parent = "smn_engine_api"
+parent = "smn_engine_install"
 +++
 <![end-metadata]-->
 
