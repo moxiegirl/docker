@@ -4,7 +4,7 @@ title = "docker.io accounts API"
 description = "API Documentation for docker.io accounts."
 keywords = ["API, Docker, accounts, REST,  documentation"]
 [menu.engine]
-parent = "mn_reference"
+parent = "parent = "smn_logging_cli""
 +++
 <![end-metadata]-->
 
