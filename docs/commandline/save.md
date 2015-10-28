@@ -4,7 +4,7 @@ title = "save"
 description = "The save command description and usage"
 keywords = ["tarred, repository, backup"]
 [menu.engine]
-parent = "smn_cli"
+parent = "smn_engine_cli"
 +++
 <![end-metadata]-->
 

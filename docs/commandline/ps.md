@@ -4,7 +4,7 @@ title = "ps"
 description = "The ps command description and usage"
 keywords = ["container, running, list"]
 [menu.engine]
-parent = "smn_cli"
+parent = "smn_engine_cli"
 +++
 <![end-metadata]-->
 

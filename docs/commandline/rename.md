@@ -4,7 +4,7 @@ title = "rename"
 description = "The rename command description and usage"
 keywords = ["rename, docker, container"]
 [menu.engine]
-parent = "smn_cli"
+parent = "smn_engine_cli"
 +++
 <![end-metadata]-->
 

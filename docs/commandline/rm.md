@@ -4,7 +4,7 @@ title = "rm"
 description = "The rm command description and usage"
 keywords = ["remove, Docker, container"]
 [menu.engine]
-parent = "smn_cli"
+parent = "smn_engine_cli"
 +++
 <![end-metadata]-->
 

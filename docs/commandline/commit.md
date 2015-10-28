@@ -4,7 +4,7 @@ title = "commit"
 description = "The commit command description and usage"
 keywords = ["commit, file, changes"]
 [menu.engine]
-parent = "smn_cli"
+parent = "smn_engine_cli"
 +++
 <![end-metadata]-->
 

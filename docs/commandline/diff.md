@@ -4,7 +4,7 @@ title = "diff"
 description = "The diff command description and usage"
 keywords = ["list, changed, files, container"]
 [menu.engine]
-parent = "smn_cli"
+parent = "smn_engine_cli"
 +++
 <![end-metadata]-->
 

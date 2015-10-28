@@ -4,7 +4,7 @@ title = "search"
 description = "The search command description and usage"
 keywords = ["search, hub, images"]
 [menu.engine]
-parent = "smn_cli"
+parent = "smn_engine_cli"
 +++
 <![end-metadata]-->
 

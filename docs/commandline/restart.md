@@ -4,7 +4,7 @@ title = "restart"
 description = "The restart command description and usage"
 keywords = ["restart, container, Docker"]
 [menu.engine]
-parent = "smn_cli"
+parent = "smn_engine_cli"
 +++
 <![end-metadata]-->
 

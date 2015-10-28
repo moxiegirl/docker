@@ -4,7 +4,7 @@ title = "volume ls"
 description = "The volume ls command description and usage"
 keywords = ["volume, list"]
 [menu.engine]
-parent = "smn_cli"
+parent = "smn_engine_cli"
 +++
 <![end-metadata]-->
 

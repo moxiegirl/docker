@@ -4,7 +4,7 @@ title = "network inspect"
 description = "The network inspect command description and usage"
 keywords = ["network, inspect"]
 [menu.engine]
-parent = "smn_cli"
+parent = "smn_engine_cli"
 +++
 <![end-metadata]-->
 

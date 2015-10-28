@@ -4,7 +4,7 @@ title = "network ls"
 description = "The network ls command description and usage"
 keywords = ["network, list"]
 [menu.engine]
-parent = "smn_cli"
+parent = "smn_engine_cli"
 +++
 <![end-metadata]-->
 

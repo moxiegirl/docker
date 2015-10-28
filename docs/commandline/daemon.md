@@ -4,7 +4,7 @@ title = "daemon"
 description = "The daemon command description and usage"
 keywords = ["container, daemon, runtime"]
 [menu.engine]
-parent = "smn_cli"
+parent = "smn_engine_cli"
 weight = -1
 +++
 <![end-metadata]-->

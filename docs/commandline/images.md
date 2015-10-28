@@ -4,7 +4,7 @@ title = "images"
 description = "The images command description and usage"
 keywords = ["list, docker, images"]
 [menu.engine]
-parent = "smn_cli"
+parent = "smn_engine_cli"
 +++
 <![end-metadata]-->
 

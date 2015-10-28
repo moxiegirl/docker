@@ -1,11 +1,10 @@
 <!-- [metadata]>
 +++
-title = "Using the command line"
+title = "Command Line"
 description = "Docker's CLI command description and usage"
 keywords = ["Docker, Docker documentation, CLI,  command line"]
 [menu.engine]
-identifier= "smn_cli"
-parent = "mn_reference"
+identifier= "smn_cli_engine"
 +++
 <!-- [end-metadata]-->
 

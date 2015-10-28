@@ -4,7 +4,7 @@ title = "unpause"
 description = "The unpause command description and usage"
 keywords = ["cgroups, suspend, container"]
 [menu.engine]
-parent = "smn_cli"
+parent = "smn_engine_cli"
 +++
 <![end-metadata]-->
 

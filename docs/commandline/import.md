@@ -4,7 +4,7 @@ title = "import"
 description = "The import command description and usage"
 keywords = ["import, file, system, container"]
 [menu.engine]
-parent = "smn_cli"
+parent = "smn_engine_cli"
 +++
 <![end-metadata]-->
 

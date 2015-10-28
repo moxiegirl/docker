@@ -4,7 +4,7 @@ title = "attach"
 description = "The attach command description and usage"
 keywords = ["attach, running, container"]
 [menu.engine]
-parent = "smn_cli"
+parent = "smn_engine_cli"
 +++
 <![end-metadata]-->
 

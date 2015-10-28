@@ -4,7 +4,7 @@ title = "pause"
 description = "The pause command description and usage"
 keywords = ["cgroups, container, suspend, SIGSTOP"]
 [menu.engine]
-parent = "smn_cli"
+parent = "smn_engine_cli"
 +++
 <![end-metadata]-->
 

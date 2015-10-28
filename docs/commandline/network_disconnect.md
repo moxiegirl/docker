@@ -4,7 +4,7 @@ title = "network disconnect"
 description = "The network disconnect command description and usage"
 keywords = ["network, disconnect"]
 [menu.engine]
-parent = "smn_cli"
+parent = "smn_engine_cli"
 +++
 <![end-metadata]-->
 

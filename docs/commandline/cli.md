@@ -4,7 +4,7 @@ title = "Use the Docker command line"
 description = "Docker's CLI command description and usage"
 keywords = ["Docker, Docker documentation, CLI,  command line"]
 [menu.engine]
-parent = "smn_cli"
+parent = "smn_engine_cli"
 weight = -2
 +++
 <![end-metadata]-->
