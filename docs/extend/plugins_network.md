@@ -1,7 +1,7 @@
 <!--[metadata]>
 +++
-title = "Docker network driver plugins"
-description = "Network drive plugins."
+title = "Network plugins"
+description = "Manage networks with external plugins"
 keywords = ["Examples, Usage, plugins, docker, documentation, user guide"]
 [menu.main]
 parent = "mn_extend"
@@ -9,42 +9,39 @@ weight=-1
 +++
 <![end-metadata]-->
 
-# Docker network driver plugins
+# Network plugins
 
-Docker supports network driver plugins via LibNetwork project. Network driver
-plugins are implemented as "remote drivers" for LibNetwork, which shares plugin
-infrastructure with Docker. In effect this means that network driver plugins are
-activated in the same way as other plugins, and use the same kind of protocol.
+Docker network plugins enable Docker deployments to be extended to support
+a wide range of networking technologies, such as VXLAN, IPVLAN, MACVLAN or
+something completely different!
 
-## Using network driver plugins
+## Using network plugins
 
-The means of installing and running a network driver plugin depend on the
-particular plugin.
+First install your plugin according to the instructions obtained from the
+plugin developer.
 
-Once running however, network driver plugins are used just like the built-in
-network drivers: by being mentioned as a driver in network-oriented Docker
-commands. For example,
+Once installed, you may use the new network driver in the `docker network
+create` command. For example,
 
     $ docker network create -d weave mynet
 
-Some network driver plugins are listed in [plugins](plugins.md)
+Some network plugins are listed in [plugins](plugins.md)
 
-The network thus created is owned by the plugin, so subsequent commands
-referring to that network will also be run through the plugin such as,
+The `mynet` network is now owned by `weave`, so subsequent commands
+referring to that network will be sent to the plugin,
 
     $ docker run --net=mynet busybox top
 
-## Network driver plugin protocol
+# Write a network plugin
 
-The network driver protocol, additional to the plugin activation call, is
-documented as part of LibNetwork:
+Network plugins implement the [Docker plugin API](https://docs.docker.com/extend/plugin_api/)
+and the network plugin protocol
+
+## Network plugin protocol
+
+The network driver protocol, in addition to the plugin activation call, is
+documented as part of libnetwork:
 [https://github.com/docker/libnetwork/blob/master/docs/remote.md](https://github.com/docker/libnetwork/blob/master/docs/remote.md).
 
-# Related GitHub PRs and issues
+****** MARY - WE SHOULD VENDOR THIS IN SOMEHOW, LIBNETWORK DOCS AREN'T HUGO COMPATIBLE
 
-Please record your feedback in the following issue, on the usual
-Google Groups, or the IRC channel `#docker-network`.
-
--  See the [LibNetwork](https://github.com/docker/libnetwork) project
- - [#14083](https://github.com/docker/docker/issues/14083) Feedback on
-   experimental networking features
