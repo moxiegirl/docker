@@ -1,13 +1,13 @@
 <!--[metadata]>
 +++
 title = "Get started with multi-host networking"
-description = "Use overlay for multi-host networking"
-keywords = ["Examples, Usage, network, docker, documentation, user guide, multihost, cluster"]
+description = "How do we connect docker containers within and across hosts ?"
+keywords = ["overlay, network, docker, guide, multihost, cluster"]
 [menu.main]
 parent = "smn_networking"
-weight=-3
+weight = -3
 +++
-<![end-metadata]-->     
+<![end-metadata]-->
 
 # Get started with multi-host networking
 
