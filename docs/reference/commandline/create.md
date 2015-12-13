@@ -79,14 +79,12 @@ Creates a new container.
       -u, --user=""                 Username or UID
       --ulimit=[]                   Ulimit options
       --uts=""                      UTS namespace to use
-      -v, --volume=[]               Bind mount a volume with: [host-src:]container-dest[:<options>], where
-                                    options are comma delimited and selected from [rw|ro] and [z|Z] and
-                                    [[r]shared|[r]slave|[r]private].
-                                    The 'host-src' can either be an absolute path or a name value.
-                                    If 'host-src' is missing, then docker creates a new volume.
-                                    If neither 'rw' or 'ro' is specified then the volume is mounted
-                                    in read-write mode.
-                                    Mount propagation options can be specified only for bind mounted volumes.
+      -v, --volume=[host-src:]container-dest[:<options>]
+                                    Bind mount a volume. The comma-delimited
+                                    `options` are [rw|ro], [z|Z], and
+                                    [[r]shared|[r]slave|[r]private]. The
+                                    'host-src' is an absolute path or a name
+                                    value.
       --volume-driver=""            Container's volume driver
       --volumes-from=[]             Mount volumes from the specified container(s)
       -w, --workdir=""              Working directory inside the container
@@ -101,18 +99,23 @@ This is useful when you want to set up a container configuration ahead of time
 so that it is ready to start when you need it. The initial status of the
 new container is `created`.
 
+
 Please see the [run command](run.md) section and the [Docker run reference](../run.md) for more details.
 
 ## Examples
+
+### Create and start a Container
 
     $ docker create -t -i fedora bash
     6d8af538ec541dd581ebc2a24153a28329acb5268abe5ef868c1f1a261221752
     $ docker start -a -i 6d8af538ec5
     bash-4.2#
 
-As of v1.4.0 container volumes are initialized during the `docker create` phase
-(i.e., `docker run` too). For example, this allows you to `create` the `data`
-volume container, and then use it from another container:
+### Create volumes
+
+Container volumes are initialized during the `docker create` phase (or
+alternatively, `docker run`). This behavior allows you to `create` the `data`
+volume container and then use it from another container:
 
     $ docker create -v /data --name data ubuntu
     240633dfbb98128fa77473d3d9018f6123b99c454b3251427ae190a7d951ad57
@@ -137,6 +140,8 @@ then be used from the subsequent container:
     -rw-r--r--  1 1000 staff  920 Nov 28 11:51 .profile
     drwx--S---  2 1000 staff  460 Dec  5 00:51 .ssh
     drwxr-xr-x 32 1000 staff 1140 Dec  5 04:01 docker
+
+You can set the propagation mode of the volumes you mount.  
 
 ### Specify isolation technology for container (--isolation)
 

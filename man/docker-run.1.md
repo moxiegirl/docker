@@ -67,7 +67,7 @@ docker-run - Run a command in a new container
 [**-u**|**--user**[=*USER*]]
 [**--ulimit**[=*[]*]]
 [**--uts**[=*[]*]]
-[**-v**|**--volume**[=*[]*]]
+[**-v**|**--volume**[=*[[HOST-DIR:]CONTAINER-DIR[:OPTIONS]]*]]
 [**--volume-driver**[=*DRIVER*]]
 [**--volumes-from**[=*[]*]]
 [**-w**|**--workdir**[=*WORKDIR*]]
@@ -476,38 +476,36 @@ any options, the systems uses the following options:
 **--ulimit**=[]
     Ulimit options
 
-**-v**, **--volume**=[] Create a bind mount
-   (format: `[host-dir:]container-dir[:<suffix options>]`, where suffix options
-are comma delimited and selected from [rw|ro], [z|Z] and
-[[r]shared|[r]slave|[r]private].)
+[**-v**|**--volume**[=*[[HOST-DIR:]CONTAINER-DIR[:OPTIONS]]*]]
 
-   (e.g., using -v /host-dir:/container-dir, bind mounts /host-dir in the
-host to /container-dir in the Docker container)
+  Create a bind mount. If you specify, ` -v /HOST-DIR:/CONTAINER-DIR`, Docker
+  bind mounts `/HOST-DIR` in the host to `/CONTAINER-DIR` in the Docker
+  container. If 'HOST-DIR' is omitted,  Docker automatically creates the new
+  volume on the host.  The `OPTIONS` are a comma delimited list and can be:
 
-   If 'host-dir' is missing, then docker automatically creates the new volume
-on the host. **This auto-creation of the host path has been deprecated in
-Release: v1.9.**
+  * [rw|ro]
+  * [z|Z]
+  * [`[r]shared`|`[r]slave`|`[r]private`]
 
-The `container-dir` must always be an absolute path such as `/src/docs`.
-The `host-dir` can either be an absolute path or a `name` value. If you
-supply an absolute path for the `host-dir`, Docker bind-mounts to the path
-you specify. If you supply a `name`, Docker creates a named volume by that `name`.
 
-A `name` value must start with start with an alphanumeric character,
-followed by `a-z0-9`, `_` (underscore), `.` (period) or `-` (hyphen).
-An absolute path starts with a `/` (forward slash).
+The `CONTAINER-DIR` must be an absolute path such as `/src/docs`. The `HOST-DIR`
+can be an absolute path or a `name` value. A `name` value must start with an
+alphanumeric character, followed by `a-z0-9`, `_` (underscore), `.` (period) or `-`
+(hyphen). An absolute path starts with a `/` (forward slash).
 
-For example, you can specify either `/foo` or `foo` for a `host-dir` value.
-If you supply the `/foo` value, Docker creates a bind-mount. If you supply
-the `foo` specification, Docker creates a named volume.
+If you supply a `HOST-DIR` that is an absolute path,  Docker bind-mounts to the
+path you specify. If you supply a `name`, Docker creates a named volume by that
+`name`. For example, you can specify either `/foo` or `foo` for a `HOST-DIR`
+value. If you supply the `/foo` value, Docker creates a bind-mount. If you
+supply the `foo` specification, Docker creates a named volume.
 
-   The **-v** option can be used one or
-more times to add one or more mounts to a container. These mounts can then be
-used in other containers using the **--volumes-from** option.
+You can specify multiple  **-v** options to mount one or more mounts to a
+container. To use these same mounts in other containers, specify the
+**--volumes-from** option also.
 
-   The volume may be optionally suffixed with :ro or :rw to mount the volumes in
-read-only or read-write mode, respectively. By default, the volumes are mounted
-read-write. See examples.
+You can add `:ro` or `:rw` suffix to a volume to mount it read-only or
+read-write mode, respectively. By default, the volumes are mounted read-write.
+See examples.
 
 Labeling systems like SELinux require that proper labels are placed on volume
 content mounted into a container. Without a label, the security system might
@@ -522,7 +520,9 @@ content label. Shared volume labels allow all containers to read/write content.
 The `Z` option tells Docker to label the content with a private unshared label.
 Only the current container can use a private volume.
 
-To control mount propagation property of volume one can use `:[r]shared`,
+You can control the mount propagation property of a volume.
+
+ one can use `:[r]shared`,
 `:[r]slave` or `:[r]private` propagation flag. Propagation property can
 be specified only for bind mounted volumes and not for internal volumes or
 named volumes. For mount propagation to work source mount point (mount point
@@ -582,7 +582,7 @@ The exit code from `docker run` gives information about why the container
 failed to run or why it exited.  When `docker run` exits with a non-zero code,
 the exit codes follow the `chroot` standard, see below:
 
-**_125_** if the error is with Docker daemon **_itself_** 
+**_125_** if the error is with Docker daemon **_itself_**
 
     $ docker run --foo busybox; echo $?
     # flag provided but not defined: --foo
@@ -603,9 +603,9 @@ the exit codes follow the `chroot` standard, see below:
       docker: Error response from daemon: Contained command not found or does not exist
       127
 
-**_Exit code_** of **_contained command_** otherwise 
-    
-    $ docker run busybox /bin/sh -c 'exit 3' 
+**_Exit code_** of **_contained command_** otherwise
+
+    $ docker run busybox /bin/sh -c 'exit 3'
     # 3
 
 # EXAMPLES
