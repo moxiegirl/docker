@@ -438,16 +438,16 @@ Currently supported options of `zfs`:
 ## Docker execdriver option
 
 The Docker daemon uses a specifically built `libcontainer` execution driver as
-its interface to the Linux kernel `namespaces`, `cgroups`, and `SELinux`.
+its interface to the Linux kernel `namespaces`, `cgroups` (control groups), and `SELinux`.
 
 ## Options for the native execdriver
 
 You can configure the `native` (libcontainer) execdriver using options specified
 with the `--exec-opt` flag. All the flag's options have the `native` prefix. A
-single `native.cgroupdriver` option is available.
+single `native.cgroupdriver` option is available.  The `native.cgroupdriver`
+option specifies the management of the container's cgroups.
 
-The `native.cgroupdriver` option specifies the management of the container's
-cgroups. You can specify `cgroupfs` or `systemd`. If you specify `systemd` and
+You can specify `cgroupfs` or `systemd`. If you specify `systemd` and
 it is not available, the system uses `cgroupfs`. If you omit the
 `native.cgroupdriver` option,` cgroupfs` is used.
 This example sets the `cgroupdriver` to `systemd`:
@@ -646,14 +646,16 @@ set like this:
 
 # Default cgroup parent
 
-The `--cgroup-parent` option allows you to set the default cgroup parent
-to use for containers. If this option is not set, it defaults to `/docker`.
+Use the `--cgroup-parent` option to set the default cgroup (control group)
+parent to used in all containers. cgroups are a feature of the Linux kernel. You
+use them to limit a container's access to the host's resources. If you don't
+specify the `--cgroup-parent` option, the daemon uses `/docker` as the parent.
 
-If the cgroup has a leading forward slash (`/`), the cgroup is created
-under the root cgroup, otherwise the cgroup is created under the daemon
-cgroup.
+If the cgroup has a leading forward slash (`/`), the cgroup parent is the `root`
+`cgroup`. Without the slash in the value, the cgroup is created under the
+`daemoncgroup` parent.
 
-Assuming the daemon is running in cgroup `daemoncgroup`,
+Assuming the daemon is using  `daemoncgroup`,
 `--cgroup-parent=/foobar` creates a cgroup in
 `/sys/fs/cgroup/memory/foobar`, wheras using `--cgroup-parent=foobar`
 creates the cgroup in `/sys/fs/cgroup/memory/daemoncgroup/foobar`
