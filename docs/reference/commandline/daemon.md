@@ -646,20 +646,25 @@ set like this:
 
 # Default cgroup parent
 
-Use the `--cgroup-parent` option to set the default cgroup (control group)
-parent to used in all containers. cgroups are a feature of the Linux kernel. You
-use them to limit a container's access to the host's resources. If you don't
-specify the `--cgroup-parent` option, the daemon uses `/docker` as the parent.
+The cgroups (control group) feature is used to limit a container's access to the
+host's resources.  The `--cgroup-parent` option sets the default cgroup  parent
+for all containers. You can also set this option per container when you call
+`docker create` or `docker run` commands.  The subcommand value overrides the
+daemon's `--cgroup-parent` option setting.   
 
-If the cgroup has a leading forward slash (`/`), the cgroup parent is the `root`
-`cgroup`. Without the slash in the value, the cgroup is created under the
-`daemoncgroup` parent.
+The Docker host stores cgroups in relation to the `/sys/fs/cgroup/memory` root
+directory.  Where the cgroup is created in relation to this root directory,
+depends on whether and how you specify the `--cgroup-parent` option value.  If
+you don't specify the `--cgroup-parent` option, the daemon uses
+`/sys/fs/cgroup/memory/docker` as the parent.
 
-Assuming the daemon is using  `daemoncgroup`,
-`--cgroup-parent=/foobar` creates a cgroup in
-`/sys/fs/cgroup/memory/foobar`, wheras using `--cgroup-parent=foobar`
-creates the cgroup in `/sys/fs/cgroup/memory/daemoncgroup/foobar`
+If you set this option, the option value can start with a leading forward slash (`/`)
+or without one. The presence or absence of a slash determines where the cgroup
+is located in the `/sys/fs/cgroup/memory` directory. If you specify a slash in
+the value, for example `--cgroup-parent=/foobar`, Docker creates a
+`/sys/fs/cgroup/memory/foobar` folder.
 
-This setting can also be set per container, using the `--cgroup-parent`
-option on `docker create` and `docker run`, and takes precedence over
-the `--cgroup-parent` option on the daemon.
+If you don't include the slash, Docker creates a
+`/sys/fs/cgroup/memory/daemoncgroup` folder and places your group within it. For
+example, if you specify `--cgroup-parent=foobar` the system creates the cgroup
+in the `/sys/fs/cgroup/memory/daemoncgroup/foobar` directory.
