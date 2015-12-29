@@ -47,7 +47,7 @@ docker-run - Run a command in a new container
 [**-m**|**--memory**[=*MEMORY*]]
 [**--mac-address**[=*MAC-ADDRESS*]]
 [**--memory-reservation**[=*MEMORY-RESERVATION*]]
-[**--memory-swap**[=*MEMORY-SWAP*]]
+[**--memory-swap**[=*SWAP_LIMIT*]]
 [**--memory-swappiness**[=*MEMORY-SWAPPINESS*]]
 [**--name**[=*NAME*]]
 [**--net**[=*"bridge"*]]
@@ -327,11 +327,11 @@ reservation. So you should always set the value below **--memory**, otherwise th
 hard limit will take precedence. By default, memory reservation will be the same
 as memory limit.
 
-**--memory-swap**=""
-   Total memory limit (memory + swap)
+**--memory-swap**="SWAP_LIMIT"
+   A limit value equal to memory plus swap. This value should always larger than **-m** (**--memory**).  The format of `SWAP_LIMIT` <`number`>[<`unit`>]. Unit can be `b` (bytes), `k` (kilobytes), `m` (megabytes), or `g` (gigabytes). If you don't specify a unit `m` is used.
 
-   Set `-1` to disable swap limit (unlimited) (format: <number>[<unit>], where unit = b, k, m or g).
-This value should always larger than **-m**, so you should always use this with **-m**.
+   Set SWAP_LIMIT to `-1` to enable unlimted swap. (unlimited) (format: <number>[<unit>], where unit = b, k, m or g).
+ so you should always use this with **-m**.
 
 **--mac-address**=""
    Container MAC address (e.g. 92:d0:c6:0a:29:33)
@@ -594,7 +594,7 @@ The exit code from `docker run` gives information about why the container
 failed to run or why it exited.  When `docker run` exits with a non-zero code,
 the exit codes follow the `chroot` standard, see below:
 
-**_125_** if the error is with Docker daemon **_itself_** 
+**_125_** if the error is with Docker daemon **_itself_**
 
     $ docker run --foo busybox; echo $?
     # flag provided but not defined: --foo
@@ -615,9 +615,9 @@ the exit codes follow the `chroot` standard, see below:
       docker: Error response from daemon: Contained command not found or does not exist
       127
 
-**_Exit code_** of **_contained command_** otherwise 
-    
-    $ docker run busybox /bin/sh -c 'exit 3' 
+**_Exit code_** of **_contained command_** otherwise
+
+    $ docker run busybox /bin/sh -c 'exit 3'
     # 3
 
 # EXAMPLES
