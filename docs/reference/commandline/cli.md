@@ -104,12 +104,22 @@ falls back to the default table format. For a list of supported formatting
 directives, see the
 [**Formatting** section in the `docker ps` documentation](ps.md)
 
-The property `detachKeys` specifies the default key sequence which
-detaches the container. When the `--detach-keys` flag is not provide
-with the `docker attach`, `docker exec`, `docker run` or `docker
-start`, Docker's client uses this property. If this property is not
-set, the client falls back to the default sequence `ctrl-p,ctrl-q`.
+Once attached to a container, users detach from it and leave it running using
+the using `CTRL-p CTRL-q` key sequence. This detach key sequence is customizable
+using the `detachKeys` property. Specify a `ctrl-<value>` value for the
+property. Replace the `<value>` component with any of the following characters:
 
+* `a-z` (a single lowercase alpha character )
+* `@` (ampersand)
+* `[` (left bracket)
+* `\\` (two backward slashes)
+*  `_` (underscore)
+* `^` (caret)
+
+Your customization applies to all containers started in with your Docker client.
+Users can override your custom or the default key sequence on a per-container
+basis. To do this, the user specifies the `--detach-keys` flag with the `docker
+attach`, `docker exec`, `docker run` or `docker start` command.
 
 The property `imagesFormat` specifies the default format for `docker images` output.
 When the `--format` flag is not provided with the `docker images` command,

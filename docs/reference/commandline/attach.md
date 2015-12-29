@@ -14,7 +14,7 @@ parent = "smn_cli"
 
     Attach to a running container
 
-      --detach-keys       Set up escape key sequence
+      --detach-keys="ctrl-<value>"       Set up escape key sequence
       --help              Print usage
       --no-stdin          Do not attach STDIN
       --sig-proxy=true    Proxy all received signals to the process
@@ -26,13 +26,9 @@ simultaneously, screen sharing style, or quickly view the progress of your
 detached  process.
 
 To stop a container, use `CTRL-c`. This key sequence sends `SIGKILL` to the
-container. You can detach from the container (and leave it running) using a
-configurable key sequence. The default sequence is `CTRL-p CTRL-q`. You
-configure the key sequence using the **--detach-keys** option or a configuration
-file. See the [**Configuration file** section in the command line reference](cli.md#configuration-files)
-
-If `--sig-proxy` is true (the default),`CTRL-c` sends a `SIGINT` to the
-container.
+container. If `--sig-proxy` is true (the default),`CTRL-c` sends a `SIGINT` to
+the container. You can detach from a container and leave it running using the
+using `CTRL-p CTRL-q` key sequence.
 
 > **Note:**
 > A process running as PID 1 inside a container is treated specially by
@@ -42,6 +38,28 @@ container.
 
 It is forbidden to redirect the standard input of a `docker attach` command
 while attaching to a tty-enabled container (i.e.: launched with `-t`).
+
+## Override the detach sequence
+
+If you want, you can configure a different sequence for detach. Configuration is
+useful if the Docker default sequence overrides a default you use for other
+applications. There are two ways to configure a custom detach key sequence, per
+container or on your entire configuration.
+
+To change the sequence for a particular container, use the
+`--detach-keys="ctrl-<value>"` flag with the `docker attach` command. Replace
+`<value>` with any of the following characters:
+
+* `a-z` (a single lowercase alpha character )
+* `@` (ampersand)
+* `[` (left bracket)
+* `\\` (two backward slashes)
+*  `_` (underscore)
+* `^` (caret)
+
+To configure a different key sequence for all containers, see [**Configuration
+file** section](cli.md#configuration-files).
+
 
 #### Examples
 
