@@ -15,5 +15,6 @@ parent = "smn_cli"
     Start one or more containers
 
       -a, --attach               Attach STDOUT/STDERR and forward signals
+      --detach-keys              Set up escape key sequence
       --help                     Print usage
       -i, --interactive          Attach container's STDIN

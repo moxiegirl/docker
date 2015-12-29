@@ -101,7 +101,15 @@ The property `psFormat` specifies the default format for `docker ps` output.
 When the `--format` flag is not provided with the `docker ps` command,
 Docker's client uses this property. If this property is not set, the client
 falls back to the default table format. For a list of supported formatting
-directives, see the [**Formatting** section in the `docker ps` documentation](ps.md)
+directives, see the
+[**Formatting** section in the `docker ps` documentation](ps.md)
+
+The property `detachKeys` specifies the default key sequence which
+detaches the container. When the `--detach-keys` flag is not provide
+with the `docker attach`, `docker exec`, `docker run` or `docker
+start`, Docker's client uses this property. If this property is not
+set, the client falls back to the default sequence `ctrl-p,ctrl-q`.
+
 
 The property `imagesFormat` specifies the default format for `docker images` output.
 When the `--format` flag is not provided with the `docker images` command,
@@ -115,8 +123,9 @@ Following is a sample `config.json` file:
       "HttpHeaders": {
         "MyHeader": "MyValue"
       },
-      "psFormat": "table {{.ID}}\\t{{.Image}}\\t{{.Command}}\\t{{.Labels}}"
-      "imagesFormat": "table {{.ID}}\\t{{.Repository}}\\t{{.Tag}}\\t{{.CreatedAt}}"
+      "psFormat": "table {{.ID}}\\t{{.Image}}\\t{{.Command}}\\t{{.Labels}}",
+      "imagesFormat": "table {{.ID}}\\t{{.Repository}}\\t{{.Tag}}\\t{{.CreatedAt}}",
+      "detachKeys": "ctrl-e,e"
     }
 
 ### Notary

@@ -6,6 +6,7 @@ docker-attach - Attach to a running container
 
 # SYNOPSIS
 **docker attach**
+[**--detach-keys**[=*[]*]]
 [**--help**]
 [**--no-stdin**]
 [**--sig-proxy**[=*true*]]
@@ -18,15 +19,19 @@ interactively.  You can attach to the same contained process multiple times
 simultaneously, screen sharing style, or quickly view the progress of your
 detached process.
 
-You can detach from the container (and leave it running) with `CTRL-p CTRL-q`
-(for a quiet exit) or `CTRL-c` which will send a `SIGKILL` to the container.
-When you are attached to a container, and exit its main process, the process's
-exit code will be returned to the client.
+To stop a container, use `CTRL-c`. This key sequence sends `SIGKILL` to the
+container. You can detach from the container (and leave it running) using a
+configurable key sequence. The default sequence is `CTRL-p CTRL-q`. You
+configure the key sequence using the **--detach-keys** option or a configuration
+file. See **docker(1)** for documentation on using a configuration file.
 
 It is forbidden to redirect the standard input of a `docker attach` command while
 attaching to a tty-enabled container (i.e.: launched with `-t`).
 
 # OPTIONS
+**--detach-keys**=""
+  Define the key sequence which detaches the container
+
 **--help**
   Print usage statement
 

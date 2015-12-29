@@ -7,6 +7,7 @@ docker-start - Start one or more containers
 # SYNOPSIS
 **docker start**
 [**-a**|**--attach**]
+[**--detach-keys**[=*[]*]]
 [**--help**]
 [**-i**|**--interactive**]
 CONTAINER [CONTAINER...]
@@ -17,7 +18,11 @@ Start one or more containers.
 
 # OPTIONS
 **-a**, **--attach**=*true*|*false*
-   Attach container's STDOUT and STDERR and forward all signals to the process. The default is *false*.
+   Attach container's STDOUT and STDERR and forward all signals to the
+   process. The default is *false*.
+
+**--detach-keys**=""
+   Define the key sequence to use to detach from the container.
 
 **--help**
   Print usage statement

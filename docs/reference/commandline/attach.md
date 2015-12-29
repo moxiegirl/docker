@@ -14,6 +14,7 @@ parent = "smn_cli"
 
     Attach to a running container
 
+      --detach-keys       Set up escape key sequence
       --help              Print usage
       --no-stdin          Do not attach STDIN
       --sig-proxy=true    Proxy all received signals to the process
@@ -24,8 +25,11 @@ interactively. You can attach to the same contained process multiple times
 simultaneously, screen sharing style, or quickly view the progress of your
 detached  process.
 
-You can detach from the container and leave it running with `CTRL-p CTRL-q`
-(for a quiet exit) or with `CTRL-c` if `--sig-proxy` is false.
+To stop a container, use `CTRL-c`. This key sequence sends `SIGKILL` to the
+container. You can detach from the container (and leave it running) using a
+configurable key sequence. The default sequence is `CTRL-p CTRL-q`. You
+configure the key sequence using the **--detach-keys** option or a configuration
+file. See the [**Configuration file** section in the command line reference](cli.md#configuration-files)
 
 If `--sig-proxy` is true (the default),`CTRL-c` sends a `SIGINT` to the
 container.

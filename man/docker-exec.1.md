@@ -7,6 +7,7 @@ docker-exec - Run a command in a running container
 # SYNOPSIS
 **docker exec**
 [**-d**|**--detach**]
+[**--detach-keys**[=*[]*]]
 [**--help**]
 [**-i**|**--interactive**]
 [**--privileged**]
@@ -27,6 +28,9 @@ container is unpaused, and then run
 # OPTIONS
 **-d**, **--detach**=*true*|*false*
    Detached mode: run command in the background. The default is *false*.
+
+**--detach-keys**=""
+  Define the key sequence which detaches the container
 
 **--help**
   Print usage statement
