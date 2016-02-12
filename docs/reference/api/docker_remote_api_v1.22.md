@@ -58,9 +58,15 @@ List containers
                  },
                  "SizeRw": 12288,
                  "SizeRootFs": 0,
+                 "HostConfig": {
+                         "NetworkMode": "default"
+                 },
                  "NetworkSettings": {
                          "Networks": {
                                  "bridge": {
+                                          "IPAMConfig": null,
+                                          "Links": null,
+                                          "Aliases": null,
                                           "NetworkID": "7ea29fc1412292a2d7bba362f9253545fecdfa8ce9a6e37dd10ba8bee7129812",
                                           "EndpointID": "2cdc4edb1ded3631c81f57966563e5c8525b81121bb3706a9a9a3ae102711f3f",
                                           "Gateway": "172.17.0.1",
@@ -86,9 +92,15 @@ List containers
                  "Labels": {},
                  "SizeRw": 12288,
                  "SizeRootFs": 0,
+                 "HostConfig": {
+                         "NetworkMode": "default"
+                 },
                  "NetworkSettings": {
                          "Networks": {
                                  "bridge": {
+                                          "IPAMConfig": null,
+                                          "Links": null,
+                                          "Aliases": null,
                                           "NetworkID": "7ea29fc1412292a2d7bba362f9253545fecdfa8ce9a6e37dd10ba8bee7129812",
                                           "EndpointID": "88eaed7b37b38c2a3f0c4bc796494fdf51b270c2d22656412a2ca5d559a64d7a",
                                           "Gateway": "172.17.0.1",
@@ -115,9 +127,15 @@ List containers
                  "Labels": {},
                  "SizeRw":12288,
                  "SizeRootFs":0,
+                 "HostConfig": {
+                         "NetworkMode": "default"
+                 },
                  "NetworkSettings": {
                          "Networks": {
                                  "bridge": {
+                                          "IPAMConfig": null,
+                                          "Links": null,
+                                          "Aliases": null,
                                           "NetworkID": "7ea29fc1412292a2d7bba362f9253545fecdfa8ce9a6e37dd10ba8bee7129812",
                                           "EndpointID": "8b27c041c30326d59cd6e6f510d4f8d1d570a228466f956edf7815508f78e30d",
                                           "Gateway": "172.17.0.1",
@@ -144,9 +162,15 @@ List containers
                  "Labels": {},
                  "SizeRw": 12288,
                  "SizeRootFs": 0,
+                 "HostConfig": {
+                         "NetworkMode": "default"
+                 },
                  "NetworkSettings": {
                          "Networks": {
                                  "bridge": {
+                                          "IPAMConfig": null,
+                                          "Links": null,
+                                          "Aliases": null,
                                           "NetworkID": "7ea29fc1412292a2d7bba362f9253545fecdfa8ce9a6e37dd10ba8bee7129812",
                                           "EndpointID": "d91c7b2f0644403d7ef3095985ea0e2370325cd2332ff3a3225c4247328e66e9",
                                           "Gateway": "172.17.0.1",
@@ -386,7 +410,8 @@ Json Parameters:
             An ever increasing delay (double the previous delay, starting at 100mS)
             is added before each restart to prevent flooding the server.
     -   **NetworkMode** - Sets the networking mode for the container. Supported
-          values are: `bridge`, `host`, and `container:<name|id>`
+          standard values are: `bridge`, `host`, `none`, and `container:<name|id>`. Any other value is taken
+          as a custom network's name to which this container should connect to.
     -   **Devices** - A list of devices to add to the container specified as a JSON object in the
       form
           `{ "PathOnHost": "/dev/deviceName", "PathInContainer": "/dev/deviceName", "CgroupPermissions": "mrw"}`
